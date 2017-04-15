@@ -30,9 +30,9 @@ $.gulp.task('default', $.gulp.series(
     'css:foundation',
     'sprite:svg',
     'copy:fonts'
-  )/*,
+  ),
   $.gulp.parallel(
     'watch',
     'serve'
-  )*/
+  )
 ));
