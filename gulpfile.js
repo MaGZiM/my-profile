@@ -21,6 +21,7 @@ $.path.task.forEach(function(taskPath) {
 
 $.gulp.task('default', $.gulp.series(
   'clean',
+  'sprite:img',
   $.gulp.parallel(
     'sass',
     'pug',
