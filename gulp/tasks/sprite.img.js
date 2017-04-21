@@ -8,6 +8,7 @@ module.exports = function () {
       .pipe($.gp.spritesmith({
         imgName: 'sprite.png',
         cssName: 'sprite.scss',
+        cssFormat: 'css',
         padding: 15
       }));
 
