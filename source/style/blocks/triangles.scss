@@ -1,0 +1,16 @@
+.triangle {
+  height: 100px;
+  width: 100%;
+
+  &_fill {
+
+    &_about {
+      fill: $about-me;
+    }
+
+    &_skills {
+      fill: $skills;
+    }
+
+  }
+}

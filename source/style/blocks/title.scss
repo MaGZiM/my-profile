@@ -1,0 +1,15 @@
+.title {
+  color: $main-title;
+  font-size: 63px;
+  @include webis();
+  padding: 35px 65px 10px;
+  display: inline-block;
+  position: relative;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -ms-text-align-last: right;
+  @include centeredTitle;
+
+  @include underline(-3px);
+}

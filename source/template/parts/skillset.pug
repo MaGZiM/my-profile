@@ -1,0 +1,16 @@
+.skillset
+    each sum in skills
+        ul.skills__section
+            li.skills__row
+                .skills__row-title= sum.name
+                each skill in sum.skills
+                    ul.skill__circles
+                        li.skill__circle
+                            svg.circles(viewbox="0 0 110 110")
+                                circle.circle__first(r="45" cx="50%" cy="50%" fill="none")
+                                circle.circle__second(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" stroke-opacity=`0.5 + \0.${skill.skillvalue}` class=`circle-${skill.skillvalue}`)
+                            .skillset__skill-name= skill.skillname
+            //-.skillset__sum-title= sum
+
+        //-ul.skillset__skills
+            li.skillset__skill

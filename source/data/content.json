@@ -1,0 +1,76 @@
+{
+  "contacts": [
+    {
+      "icon": "skype",
+      "contact": "mmowglyy"
+    },
+    {
+      "icon": "envelope",
+      "contact": "max.rysukhyn@yandex.ru"
+    },
+    {
+      "icon": "phone",
+      "contact": "+38 063 403 22 03"
+    },
+    {
+      "icon": "map-marker",
+      "contact": "Харьков, ул. М. Батицкого, д.22"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "skills": [{
+        "skillname": "HTML5",
+        "skillvalue": 50
+      },
+      {
+        "skillname": "CSS3",
+        "skillvalue": 60
+      },
+      { "skillname": "JavaScript & jQuery",
+        "skillvalue": 70
+      }]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        {
+          "skillname": "PHP",
+          "skillvalue": 20
+        },
+        {
+          "skillname": "mySQL",
+          "skillvalue": 40
+        },
+        {
+          "skillname": "Node.js & npm",
+          "skillvalue": 10
+        },
+        {
+          "skillname": "Mongo.db",
+          "skillvalue": 30
+      }]
+    },
+    {
+      "name": "Workflow",
+      "skills": [
+        {
+          "skillname": "Git",
+          "skillvalue": 50
+        },
+        {
+          "skillname": "Gulp",
+          "skillvalue": 60
+        },
+        {
+          "skillname": "Bower",
+          "skillvalue": 50
+        }
+      ]
+    }
+  ],
+  "navs": [
+    "Мои работы", "Обо мне", "Блог", "Авторизация"
+  ]
+}

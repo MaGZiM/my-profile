@@ -1,0 +1,34 @@
+.user {
+  text-align: center;
+}
+
+.user__photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.user__photo-avatar {
+  display: block;
+  max-width: 100%;
+}
+
+.user__photo-img {
+  width: 300px;
+  margin-left: -40px;
+}
+
+.user__name {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 35px;
+}
+
+.user__desc {
+  margin-top: -8px;
+  font-weight: 100;
+  color: #ffffff;
+}

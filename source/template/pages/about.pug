@@ -1,0 +1,47 @@
+extends ../main-layout
+
+block variables
+  - var title = 'About Me'
+
+block content
+  section.section.hero
+    .hero__bg
+      img(src="assets/img/header-img.jpg", alt="").hero__bg-img
+
+    +socials('vk', 'github-alt', 'linkedin')
+
+    img(src='assets/img/backgrounds/header-portfolio.png').ghost-img-portfolio
+
+    a(href="").hamburger
+      img(src="./assets/img/content/hamburger.png").hamburger-img
+
+    a(href="").down-arrow
+      img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
+
+    .hero__title
+      .user.hero__user-block
+        .user__photo
+          .user__photo-avatar
+            img(src="assets/img/content/user.jpg", alt="").user__photo-img
+        .user__name Рысухин Максим
+        .user__desc Личный сайт веб-разработчика
+
+  section.section.about
+    .about__left
+      svg(
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_about about__triangles")
+        polygon(points="0,0 0,100 1000,100")
+      include ../parts/user-about
+    .about__right
+      svg(
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_skills about__triangles")
+        polygon(points="0,100 1000,100 1000,0")
+      include ../parts/about-data
+
+  section.map
+    img.map-img(src="assets/img/backgrounds/map-img.jpg")
+    include ../parts/contacts-pad

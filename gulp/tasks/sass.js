@@ -2,7 +2,7 @@
 
 module.exports = function() {
   $.gulp.task('sass', function() {
-    return $.gulp.src('./source/style/app.scss')
+    return $.gulp.src('./source/style/main.scss')
       .pipe($.gp.sassGlob())
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass()).on('error', $.gp.notify.onError({ title: 'Style' }))

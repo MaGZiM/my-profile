@@ -1,0 +1,8 @@
+.contacts-pad
+    .contacts-pad__title КОНТАКТЫ
+    each cont in contacts
+            .contacts-pad__contacts
+                ul.contacts
+                    li.contacts__item
+                        i.fa(class=`fa-${cont.icon}`).contact__icon
+                        .contact__self= cont.contact

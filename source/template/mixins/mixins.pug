@@ -1,0 +1,9 @@
+mixin title (title, url, additionClass)
+    .title(style=`background: url('assets/img/backgrounds/${url}');background-size: 100% 100%` class=additionClass)= title
+
+mixin socials(...socialslist)
+    ul.socials
+        each icon in socialslist
+            li.socials__item
+                a(href="#").socials__link
+                    i(class=`fa fa-${icon}` aria-hidden="true")

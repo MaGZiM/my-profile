@@ -1,0 +1,46 @@
+@mixin centered($axis: 'both') {
+  position: absolute;
+
+  @if $axis == 'both' {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x' {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y' {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin centeredTitle() {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin underline($bottom: 0) {
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 90px;
+    height: 3px;
+    background: $main-title;
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    margin-left: -45px;
+  }
+}

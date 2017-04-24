@@ -1,0 +1,18 @@
+.socials {
+  display: inline;
+  font-size: 27px;
+
+  .socials__item {
+    display: inline-block;
+    padding: 0 10px;
+    color: white;
+  }
+}
+
+.socials__link {
+  color: white;
+
+  &:hover {
+    color: $btn-color_hover;
+  }
+}
