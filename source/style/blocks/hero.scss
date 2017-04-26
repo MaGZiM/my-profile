@@ -38,4 +38,8 @@
     @include roboto();
     font-size: 34px;
   }
+
+  .user__desc {
+    @include roboto()
+  }
 }

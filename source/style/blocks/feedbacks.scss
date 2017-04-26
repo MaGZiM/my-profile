@@ -1,0 +1,94 @@
+.feedbacks {
+  background: url("./assets/img/backgrounds/feedback-backgrnd.png") no-repeat center bottom;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.feedback__container {
+  width: 745px;
+  margin: 0 auto;
+}
+
+.feedback__container-title {
+  width: 600px;
+  text-align: center;
+  line-height: 1.3;
+  font-size: 63px;
+  color: $main-title;
+  padding: 35px 30px;
+  line-height: 1em;
+  @include underline(0)
+  margin-bottom: 35px;
+}
+
+.feedbacks {
+  width: 100%;
+  @extend %clearfix;
+}
+
+.feedbacks-item {
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.feedbacks-item__author-pic {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.feedbacks-item__author-first {
+  margin-top: -20px;
+  margin-left: -2px;
+}
+
+.feedbacks-item__text {
+  color: $subtitle;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.feedbacks-item__author {
+  display: inline-block;
+  @include roboto(medium);
+  color: $btn-color-hover;
+  margin: 5px auto;
+}
+
+.feedbacks-item__author-pos {
+  color: $main-title;
+}
+
+.feedbacks__contact-form {
+  margin-bottom: 70px;
+}
+
+.contact-form__title {
+  font-size: 35px;
+  @include underline(-20px, $subtitle);
+  color: $subtitle;
+  margin-bottom: 30px;
+}
+
+.feedbacks-arrow__icon {
+  display: block;
+  margin: 0 auto;
+  transform: rotate(180deg);
+  margin-bottom: 70px;
+}
+
+.empty {
+  height: $footer-height;
+}
+
+.feedbacks__background-img {
+  width: 100%;
+  position: absolute;
+  bottom: -70px;
+  z-index: -1;
+}

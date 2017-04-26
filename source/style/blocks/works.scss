@@ -1,0 +1,136 @@
+.works {
+  height: 935px;
+}
+
+.works__up {
+  background: #f8f9f5;
+  height: 185px;
+  position: relative;
+}
+
+.works__section-title {
+  font-size: 63px;
+  padding: 40px 65px 15px;
+  width: 500px;
+  color: $main-title;
+  @include underline()
+}
+
+.works__contents {
+  @extend %clearfix;
+}
+
+.works__schoolsite, .works__contents-right {
+  width: 50%;
+  float: left;
+}
+
+.works__schoolsite {
+  background: $about-me;
+  height: 750px;
+  position: relative;
+}
+
+.schoolsite__block {
+  height: 320px;
+  width: 440px;
+  text-align: center;
+  @include centered()
+}
+
+.schoolsite__block-title {
+  font-size: 35px;
+  @include webis;
+  position: relative;
+  margin-bottom: 30px;
+  color: $subtitle;
+  @include underline(-15px, $subtitle)
+}
+
+.schoolsite__block-techs {
+  @include roboto(medium)
+  color: $btn-color_hover;
+  margin-bottom: 60px;
+}
+
+.schoolsite__btn {
+  height: 45px;
+  width: 200px;
+  background: $btn-color;
+  color: white;
+  border: none;
+  border-radius: 22px;
+
+  &:hover {
+    background-color: $btn-color_hover;
+    cursor: pointer;
+  }
+}
+
+.schoolsite__btn-icon {
+  display: inline;
+}
+
+.schoolsite__btn-txt {
+  display: inline;
+}
+
+.works__large {
+  background: #e1e4d7;
+  height: 525px;
+  position: relative;
+}
+
+.works__large-img {
+  width: 100%;
+  @include centered();
+}
+
+.works__small-set {
+  height: 225px;
+  @extend %clearfix;
+}
+
+.work-small__down, .work-small__up {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.works__small-img {
+  height: 100%;
+  @include centered(x);
+}
+
+.works__small-overlaydown {
+  height: 225px;
+  width: 100%;
+  background: rgba(177, 181, 173, .7);
+  position: absolute;
+}
+
+.works__small-overlayup {
+  height: 225px;
+  width: 100%;
+  background: rgba(124, 124, 124, .7);
+  position: absolute;
+}
+
+.works__small-arrow {
+  position: absolute;
+  display: inline-block;
+  z-index: 1;
+  @include centered();
+}
+
+
+
+.down__icon, .up__icon {
+  width: 45px;
+}
+
+.up__icon {
+  transform: rotate(180deg);
+}

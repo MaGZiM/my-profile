@@ -2,12 +2,20 @@
   height: $footer-height;
 }
 
+.footer_transparent {
+  background-color: rgba(83, 89, 93, .6);
+  margin-top: -205px;
+
+  .footer__row_bottom {
+    background-color: rgba(129, 169, 113, .5);
+  }
+}
+
 .footer__row {
   width: 100%;
 }
 
 .footer__row_top {
-  background-color: #53595d;
   height: 165px;
 }
 
@@ -68,7 +76,11 @@
   &__item {
     display: inline-block;
     padding: 0 7px;
-    @include roboto(medium)
+    @include roboto(medium);
+  }
+
+  &__link:hover {
+    color: #a1a7a5;
   }
 }
 
@@ -88,7 +100,6 @@
 
 .footer__row_bottom {
   height: 40px;
-  background-color: #81a971;
   text-align: center;
 
   .row-bottom-writing {

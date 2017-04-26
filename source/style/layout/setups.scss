@@ -19,11 +19,12 @@ body {
   min-height: 100%;
   position: relative;
   overflow: hidden;
-  &:after {
-    content: '';
-    display: block;
-    height: $footer-height;
-  }
+}
+
+.empty {
+  content: '';
+  display: block;
+  height: $footer-height;
 }
 
 ul {
@@ -49,4 +50,16 @@ a {
 
 footer {
   margin-top: -$footer-height;
+}
+
+input, textarea {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  border: none;
 }

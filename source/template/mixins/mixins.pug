@@ -1,6 +1,13 @@
 mixin title (title, url, additionClass)
     .title(style=`background: url('assets/img/backgrounds/${url}');background-size: 100% 100%` class=additionClass)= title
 
+mixin poligon (color)
+    svg(
+    viewbox="0 0 1000 100"
+    preserveAspectRatio="none"
+    class="poligon")
+        polygon(points="0,0 0,100 1000,100 1000,0 500,100" fill=`#${color}`)
+
 mixin socials(...socialslist)
     ul.socials
         each icon in socialslist

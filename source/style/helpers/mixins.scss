@@ -31,13 +31,13 @@
   }
 }
 
-@mixin underline($bottom: 0) {
+@mixin underline($bottom: 0, $background: $main-title) {
   &:after {
     content: '';
     display: inline-block;
     width: 90px;
     height: 3px;
-    background: $main-title;
+    background: $background;
     position: absolute;
     bottom: $bottom;
     left: 50%;
