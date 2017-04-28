@@ -15,17 +15,19 @@
 }
 
 .footer-about {
+  height: 185px;
+  display: flex;
+  flex-direction: column;
 
-  /*.footer__row_top {
+  .footer__row_top {
     background: rgba(83, 89, 93, .6);
     height: 145px;
-    display: flex;
   }
 
   .footer__row_bottom {
     background: #81aa70;
     height: 40px;
-  }*/
+  }
 }
 
 .footer_blog {
@@ -135,4 +137,9 @@
     @include roboto(light);
     padding: 7px;
   }
+}
+
+.row-bottom-writing {
+  color: white;
+  @include roboto(light);
 }
