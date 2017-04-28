@@ -2,7 +2,7 @@ extends ../main-layout
 
 block variables
     - var title = 'My Works'
-    - var footerClass = 'footer_transparent'
+    - var footerClass = 'footer_works'
 
 block content
     section.section.hero
@@ -19,41 +19,14 @@ block content
         a(href="").down-arrow
             img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
 
-        .hero__title
+        .hero__title_gen
             .user.hero__user-block
-                .user__photo
+                .user__photo.user__photo_gen
                     .user__photo-avatar
                         img(src="./assets/img/content/user.jpg", alt="").user__photo-img
                 .user__name Рысухин Максим
                 .user__desc Личный сайт веб-разработчика
 
-    section.works
-        .works__up
-            +poligon("f8f9f5")
-            +title("МОИ РАБОТЫ", 'header-works.png', 'works__section-title')
-        .works__contents
-            .works__schoolsite
-                .schoolsite__block
-                    .schoolsite__block-title САЙТ ШКОЛЫ ОНЛАЙН ОБРАЗОВАНИЯ
-                    .schoolsite__block-techs HTML, CSS, JAVASCRIPT
-                    a(href="").schoolsite__link
-                        button.schoolsite__btn
-                            .schoolsite__btn-text
-                                i.fa.fa-chain.schoolsite__btn-icon
-                                .schoolsite__btn-txt Посмотреть сайт
+    include ../parts/section-works
 
-            .works__contents-right
-                .works__large
-                    img.works__large-img(src="./assets/img/content/works/works-big.png")
-                .works__small-set
-                    .works__small.work-small__down
-                        img.works__small-img(src="./assets/img/content/works/works-down.png")
-                        .works__small-overlaydown
-                        .works__small-arrow
-                            img(src="./assets/img/arrow_down.svg", alt="").down__icon
-                    .works__small.work-small__up
-                        img.works__small-img(src="./assets/img/content/works/works-up.png")
-                        .works__small-overlayup
-                        .works__small-arrow
-                            img(src="./assets/img/arrow_down.svg", alt="").up__icon
     include ../parts/feedbacks

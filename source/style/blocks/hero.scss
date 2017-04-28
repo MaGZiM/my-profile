@@ -10,8 +10,25 @@
   }
 }
 
+.hero-blog {
+  height: 435px;
+  overflow: hidden;
+  position: relative;
+
+  .socials {
+    position: absolute;
+    top: 23px;
+    left: 20px;
+  }
+}
+
 .hero__bg-img {
   width: 100%;
+}
+
+.hero-blog__bg {
+  bottom: -400px;
+  position: absolute;
 }
 
 .ghost-img-portfolio {
@@ -25,10 +42,18 @@
 .hero__title {
   display: inline-block;
   position: absolute;
-  transform: translate(-50%, -50%);
   left: 50%;
-  top: 270px;
   text-align: center;
+
+  &_gen {
+    top: 270px;
+    @include centered()
+  }
+
+  &_blog {
+    top: 80px;
+    transform: translateX(-50%);
+  }
 }
 
 .hero__user-block {

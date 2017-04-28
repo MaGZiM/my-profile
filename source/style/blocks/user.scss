@@ -6,10 +6,18 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  margin-bottom: 15px;
   overflow: hidden;
   display: inline-block;
 }
+
+.user__photo_gen {
+  margin-bottom: 15px;
+}
+
+.user__photo_blog {
+  margin: 0;
+}
+
 
 .user__photo-avatar {
   display: block;

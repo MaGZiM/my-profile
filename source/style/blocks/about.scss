@@ -1,5 +1,5 @@
 .about {
-  @extend %clearfix;
+  display: flex;
 
   .title {
     margin-top: -38px;
@@ -7,10 +7,8 @@
 }
 
 .about__left, .about__right {
-  float: left;
   width: 50%;
   position: relative;
-  height: 100%;
 }
 
 .about__left {

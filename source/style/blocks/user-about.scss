@@ -1,5 +1,14 @@
+.about__section-title {
+  width: 370px;
+  padding: 35px 0 0;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 63px;
+  color: $main-title;
+  @include underline(-10px)
+}
+
 .user-about {
-  margin-top: 35px;
   width: 444px;
   display: inline-block;
   transform: translateX(-50%);

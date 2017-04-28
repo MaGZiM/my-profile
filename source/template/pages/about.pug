@@ -2,6 +2,7 @@ extends ../main-layout
 
 block variables
   - var title = 'About Me'
+  - var footerClass = 'footer-about'
 
 block content
   section.section.hero
@@ -18,9 +19,9 @@ block content
     a(href="").down-arrow
       img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
 
-    .hero__title
+    .hero__title_gen
       .user.hero__user-block
-        .user__photo
+        .user__photo.user__photo_gen
           .user__photo-avatar
             img(src="assets/img/content/user.jpg", alt="").user__photo-img
         .user__name Рысухин Максим
