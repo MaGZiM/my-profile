@@ -5,12 +5,51 @@
   flex-direction: column;
 
   .footer__row_top {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .footer__left, .footer__center, .footer__right {
     height: 147px;
+  }
+
+  @include tablet() {
+
+    margin-top: -275px;
+
+    .footer__left, .footer__center {
+      width: 50%;
+    }
+
+    .footer__right {
+      width: 100%;
+      height: 90px;
+      padding: 0 30px;
+    }
+  }
+
+  @include phone() {
+    font-size: 14px;
+    height: 345px;
+    margin-top: -345px;
+
+    .footer__left, .footer__center, .footer__right {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer__right {
+      padding: 15px 0;
+    }
   }
 
   .footer__row_bottom {
     height: 38px;
     background-color: rgba(129, 169, 113, .5);
+
+    @include phone() {
+      height: 59px;
+    }
   }
 }
 
@@ -22,6 +61,12 @@
   .footer__row_top {
     background: rgba(83, 89, 93, .6);
     height: 145px;
+    @extend %clearfix;
+
+    @include phone() {
+      display: flex;
+      flex-flow: column;
+    }
   }
 
   .footer__row_bottom {
@@ -59,6 +104,10 @@
 .footer__left {
   color: #fff;
   padding: 30px;
+
+  @include phone() {
+    padding: 15px;
+  }
 }
 
 .footer__center {
@@ -82,6 +131,12 @@
     left: 0;
     top: 30%;
   }
+
+  @include phone() {
+    padding: 15px 0;
+    border-top: 1px solid #a1a7a5;
+    border-bottom: 1px solid #a1a7a5;
+  }
 }
 
 .footer__center-up {
@@ -98,10 +153,11 @@
 }
 
 .nav-menu {
-  display: inline-block;
+  display: flex;
   width: 100%;
   padding-top: 30px;
   padding-bottom: 10px;
+  padding-left: 20px;
 
   &__item {
     display: inline-block;
@@ -111,6 +167,11 @@
 
   &__link:hover {
     color: #a1a7a5;
+  }
+
+  @include phone() {
+    padding-left: 0;
+    padding-top: 0;
   }
 }
 

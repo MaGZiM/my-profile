@@ -7,13 +7,12 @@ $about-me: #ebefe1;
 $skills: #f4f5f0;
 $footer-height: 185px;
 
+// mixins
+@import "helpers/mixins";
+
 // layout setups
 @import "layout/setups";
 @import "layout/fonts";
 @import "layout/font-awesome";
-
-// mixins
-@import "helpers/mixins";
-
 
 @import "blocks/**/*";

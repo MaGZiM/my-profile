@@ -8,6 +8,10 @@
     top: 23px;
     left: 20px;
   }
+
+  @include phone() {
+    height: 555px;
+  }
 }
 
 .hero-blog {
@@ -22,8 +26,22 @@
   }
 }
 
+.hero__bg {
+  height: 100%;
+}
+
 .hero__bg-img {
   width: 100%;
+
+  @include tablet() {
+    height: 100%;
+    width: auto;
+  }
+
+  @include phone() {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .hero-blog__bg {
@@ -46,7 +64,6 @@
   text-align: center;
 
   &_gen {
-    top: 270px;
     @include centered()
   }
 

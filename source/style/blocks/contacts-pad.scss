@@ -6,6 +6,16 @@
   @include centered();
   text-align: center;
   border-radius: 5px;
+
+  @include phone() {
+    order: -1;
+    width: 320px;
+    border-radius: 0;
+    align-self: center;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
 }
 
 ul.contacts {

@@ -8,7 +8,19 @@ body {
   width: 100%;
   font-size: 16px;
   line-height: 1.42;
-  min-width: 1200px;
+  min-width: 1800px;
+
+  @include laptop() {
+    min-width: 1200px;
+  }
+
+  @include tablet() {
+    min-width: 768px;
+  }
+
+  @include phone() {
+    min-width: 320px;
+  }
 }
 
 * {

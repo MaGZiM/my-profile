@@ -44,3 +44,28 @@
     margin-left: -45px;
   }
 }
+
+@mixin desktop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+
+@mixin phone() {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}

@@ -1,29 +1,48 @@
 .about {
   display: flex;
+  position: relative;
+  min-width: 1800px;
 
-  .title {
-    margin-top: -38px;
+  @include laptop() {
+    min-width: 1200px;
+  }
+
+  @include tablet() {
+    min-width: 768px;
+    flex-direction: column;
+  }
+
+  @include phone() {
+    min-width: 320px;
+    flex-direction: column;
   }
 }
 
 .about__left, .about__right {
   width: 50%;
   position: relative;
+  padding-top: 20px;
+  padding-bottom: 25px;
+
+  @include tablet() {
+    width: 100%;
+  }
+
+  @include phone() {
+    width: 100%;
+  }
 }
 
 .about__left {
   background: $about-me;
+  display: flex;
+
+  @include laptop() {
+    flex-flow: column;
+    align-items: center;
+  }
 }
 
 .about__right {
   background: $skills;
-}
-
-.about__triangles {
-  position: absolute;
-  bottom: 100%;
-}
-
-.about-data__content {
-  padding-top: 10px;
 }

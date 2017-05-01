@@ -29,19 +29,19 @@ block content
 
   section.section.about
     .about__left
-      svg(
-      viewbox="0 0 1000 100"
-      preserveAspectRatio="none"
-      class="triangle triangle_fill_about about__triangles")
-        polygon(points="0,0 0,100 1000,100")
       include ../parts/user-about
     .about__right
-      svg(
-      viewbox="0 0 1000 100"
-      preserveAspectRatio="none"
-      class="triangle triangle_fill_skills about__triangles")
-        polygon(points="0,100 1000,100 1000,0")
       include ../parts/about-data
+    svg(
+    viewbox="0 0 1000 100"
+    preserveAspectRatio="none"
+    class="triangle triangle_fill_about about__triangles")
+      polygon(points="0,0 0,100 1000,100")
+    svg(
+    viewbox="0 0 1000 100"
+    preserveAspectRatio="none"
+    class="triangle triangle_fill_skills about__triangles")
+      polygon(points="0,100 1000,100 1000,0")
 
   section.map
     img.map-img(src="assets/img/backgrounds/map-img.jpg")

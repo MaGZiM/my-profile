@@ -1,34 +1,78 @@
-.works {
-  height: 935px;
-}
-
 .works__up {
   background: #f8f9f5;
   height: 185px;
   position: relative;
+  display: flex;
+  justify-content: center;
+
+  @include phone() {
+    height: 95px;
+  }
 }
 
 .works__section-title {
   font-size: 63px;
   padding: 40px 65px 15px;
   width: 500px;
+  margin-top: -25px;
   color: $main-title;
-  @include underline()
+  @include underline();
+  align-self: center;
+
+  @include phone() {
+    font-size: 35px;
+    padding: 20px 25px 5px;
+    width: 240px;
+  }
 }
 
 .works__contents {
-  @extend %clearfix;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include tablet() {
+    flex-wrap: nowrap;
+    height: 1010px;
+  }
+
+  @include phone() {
+    height: 701px;
+  }
 }
 
 .works__schoolsite, .works__contents-right {
   width: 50%;
-  float: left;
+
+  @include tablet() {
+    width: 100%;
+  }
+}
+
+.works__contents-right {
+  @include tablet() {
+    order: -1;
+    height: 527px;
+  }
+
+  @include phone() {
+    height: 256px;
+  }
 }
 
 .works__schoolsite {
   background: $about-me;
-  height: 750px;
+  height: 100%;
   position: relative;
+
+  @include tablet() {
+    height: 275px;
+  }
+
+  @include phone() {
+    height: 220px;
+  }
 }
 
 .schoolsite__block {
@@ -36,6 +80,19 @@
   width: 440px;
   text-align: center;
   @include centered()
+
+  @include tablet() {
+    width: 100%;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @include phone() {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .schoolsite__block-title {
@@ -45,12 +102,24 @@
   margin-bottom: 30px;
   color: $subtitle;
   @include underline(-15px, $subtitle)
+
+  @include phone() {
+    font-size: 21px;
+  }
 }
 
 .schoolsite__block-techs {
   @include roboto(medium)
   color: $btn-color_hover;
   margin-bottom: 60px;
+
+  @include tablet() {
+    margin-bottom: 35px;
+  }
+
+  @include phone() {
+    font-size: 14px;
+  }
 }
 
 .schoolsite__btn {
@@ -61,9 +130,18 @@
   border: none;
   border-radius: 22px;
 
+  @include phone() {
+    height: 40px;
+    width: 185px;
+  }
+
   &:hover {
     background-color: $btn-color_hover;
     cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 
@@ -79,6 +157,10 @@
   background: #e1e4d7;
   height: 525px;
   position: relative;
+
+  @include phone() {
+    height: 256px;
+  }
 }
 
 .works__large-img {
@@ -88,20 +170,19 @@
 
 .works__small-set {
   height: 225px;
-  @extend %clearfix;
+  display: flex;
 }
 
 .work-small__down, .work-small__up {
   position: relative;
   width: 50%;
   height: 100%;
-  float: left;
   overflow: hidden;
 }
 
 .works__small-img {
-  height: 100%;
-  @include centered(x);
+  width: 100%;
+  @include centered();
 }
 
 .works__small-overlaydown {

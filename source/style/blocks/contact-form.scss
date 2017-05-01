@@ -12,16 +12,24 @@
 
 .contact-form__title {
   text-align: center;
+  margin-bottom: 30px;
+
+  @include phone() {
+    margin-bottom: 8px;
+  }
 }
 
 .contact-form__fields {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 315px;
 }
 
 .contact-field {
   height: 45px;
   border-radius: 18px;
-  margin: 10px 0;
   width: 100%;
   padding: 0 20px;
 
