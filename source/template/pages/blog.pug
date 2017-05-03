@@ -14,6 +14,9 @@ block content
         a(href="").hamburger
             img(src="./assets/img/content/hamburger.png").hamburger-img
 
+        a(href="").down-arrow
+            img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
+
         .hero__title.hero__title_blog
             .user.hero__user-block
                 .user__photo
@@ -38,7 +41,8 @@ block content
                     li.post
                         .post__title= post.title
                         .post__date= post.date
-                        each art in post.text
-                            p= art
+                        .post__contents
+                            each art in post.text
+                                p= art
 
     .blog__empty

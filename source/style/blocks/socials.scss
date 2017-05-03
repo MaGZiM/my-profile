@@ -1,10 +1,11 @@
 .socials {
-  display: inline;
+  display: flex;
   font-size: 27px;
+  justify-content: space-between;
+  width: 136px;
 
   .socials__item {
     display: inline-block;
-    padding: 0 10px;
     color: white;
   }
 }

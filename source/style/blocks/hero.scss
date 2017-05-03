@@ -14,18 +14,6 @@
   }
 }
 
-.hero-blog {
-  height: 435px;
-  overflow: hidden;
-  position: relative;
-
-  .socials {
-    position: absolute;
-    top: 23px;
-    left: 20px;
-  }
-}
-
 .hero__bg {
   height: 100%;
 }
@@ -65,11 +53,6 @@
 
   &_gen {
     @include centered()
-  }
-
-  &_blog {
-    top: 80px;
-    transform: translateX(-50%);
   }
 }
 
