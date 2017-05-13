@@ -90,11 +90,11 @@
   background: $blog-color;
   padding-top: 60px;
   display: flex;
-  justify-content: space-between;
 
   @include tablet() {
     padding-top: 45px;
     padding-left: 25px; // !!!!!!!!!!!maybe need to be changed because of poligon
+    padding-right: 15px;
   }
 
   @include phone() {
@@ -120,14 +120,14 @@
 }
 
 .sidebar {
-  padding-top: 10px;
+  /*padding-top: 10px;
   width: 390px;
   display: flex;
   justify-content: flex-end;
 
   @include laptop() {
     width: 310px;
-  }
+  }*/
 
   @include tablet() {
     display: none;
@@ -135,7 +135,15 @@
 }
 
 .post-refs__list {
-  width: 280px;
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 10px;
+
+  @include laptop() {
+    width: 310px;
+  }
 }
 
 .post-refs__item {
@@ -144,35 +152,49 @@
   border-right: 3px solid transparent;
   min-height: 42px;
   text-align: right;
-  padding: 0 20px;
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 25px;
+  width: 275px;
+
+  .post-refs__link {
+    color: $main-title;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-right: 3px solid $btn-color_hover;
+
+    .post-refs__link {
+      color: $btn-color_hover;
+    }
+  }
 }
 
 .item_active {
   border-right: 3px solid $btn-color_hover;
-}
 
-.post-refs__link {
-  color: $btn-color_hover;
+  .post-refs__link {
+    color: $btn-color_hover;
+    @include roboto(bold)
+  }
 }
 
 .blog-content {
-  width: 1295px;
+  padding-left: 120px;
 
   @include laptop() {
-    width: 790px;
+    padding-left: 100px;
   }
-
-  @include phone() {
-    width: 100%;
+  @include tablet() {
+    padding-left: 0;
   }
 }
 
 .blog__posts {
-  width: 685px;
+  //width: 685px;
 
   @include phone() {
     width: 100%;
@@ -247,20 +269,20 @@
 
   p {
     margin-bottom: 10px;
-
+/*
     &:last-child {
       margin-bottom: 0;
-    }
+    }*/
   }
 
   @include tablet() {
     font-size: 14px;
     line-height: 1.5em;
   }
-}
+}/*
 
 .blog__empty {
   height: 165px;
   display: block;
   content: '';
-}
+}*/

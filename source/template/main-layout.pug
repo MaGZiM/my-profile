@@ -23,6 +23,8 @@ html
     <![endif]-->
 
   body
-    .wrapper
-      block content
-    include parts/footer
+    .global
+      .wrapper
+        block content
+      include parts/footer
+      block scripts

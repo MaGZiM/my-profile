@@ -9,10 +9,7 @@
   }
 }
 
-.map-img {
+#my-map {
   height: 100%;
-
-  @include phone() {
-    flex: 1;
-  }
+  position: relative;
 }

@@ -1,19 +1,8 @@
 .about {
   display: flex;
   position: relative;
-  min-width: 1800px;
-
-  @include laptop() {
-    min-width: 1200px;
-  }
 
   @include tablet() {
-    min-width: 768px;
-    flex-direction: column;
-  }
-
-  @include phone() {
-    min-width: 320px;
     flex-direction: column;
   }
 }
@@ -36,13 +25,19 @@
 .about__left {
   background: $about-me;
   display: flex;
+  padding-right: 20px;
 
   @include laptop() {
     flex-flow: column;
     align-items: center;
+    padding-right: 0;
   }
 }
 
 .about__right {
   background: $skills;
+}
+
+.about-data__content {
+  padding-left: 40px;
 }

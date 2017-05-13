@@ -1,22 +1,17 @@
 .feedbacks {
-  background: url("./assets/img/backgrounds/feedback-backgrnd.png") no-repeat center center fixed;
-  background-size: cover;
+  //background: url("./assets/img/backgrounds/feedback-backgrnd.png"); // no-repeat center bottom;
+  background-size: auto 100%;
   position: relative;
+
   @include phone() {
     padding-top: 30px;
   }
 }
 
 .feedback__container {
-  width: 745px;
-  margin: 0 auto;
   display: flex;
   flex-flow: column;
   align-items: center;
-
-  @include phone() {
-    width: 100%;
-  }
 }
 
 .feedback__container-title {
@@ -58,6 +53,7 @@
   width: 50%;
   text-align: center;
   margin-bottom: 70px;
+  padding: 0 10px;
 
   @include phone() {
     flex-direction: column;
@@ -104,7 +100,7 @@
   @include phone() {
     width: 300px;
     padding-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 50px;
   }
 }
 
@@ -132,7 +128,11 @@
 }
 
 .empty {
-  height: $footer-height;
+  height: 195px;
+
+  @include laptop() {
+    height: 240px;
+  }
 
   @include tablet() {
     height: 275px;
@@ -144,8 +144,7 @@
 }
 
 .feedbacks__background-img {
-  width: 100%;
   position: absolute;
-  bottom: -70px;
-  z-index: -1;
+    bottom: 0;
+    z-index: -1;
 }

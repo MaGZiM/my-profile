@@ -1,5 +1,4 @@
 .skillset {
-  padding-right: 40px;
   display: flex;
   flex-direction: column;
 
@@ -13,7 +12,6 @@
 }
 
 .skills__row {
-  padding-left: 15px;
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
@@ -30,13 +28,18 @@
 
 .skills__row-title {
   font-size: 29px;
-  padding-left: 22px;
   @include roboto(medium);
 }
 
 .skill__circles {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
+  margin-left: -10px;
+
+  @include laptop() {
+    justify-content: center;
+  }
 
   @include phone() {
     justify-content: center;
@@ -46,14 +49,14 @@
 }
 
 .skill__circle {
-  width: 120px;
+  width: 140px;
   position: relative;
   display: flex;
+  justify-content: center;
   text-align: center;
-  margin-right: 40px;
 
   @include laptop() {
-    width: 110px;
+    width: 120px;
   }
 
   @include phone() {
@@ -71,9 +74,14 @@
 }
 
 .circles {
+  position: relative;
   fill: none;
   width: 115px;
   stroke-width: 19;
+
+  @include laptop() {
+    width: 110px;
+  }
 }
 .circle__first {
   stroke: #dfdcd5;

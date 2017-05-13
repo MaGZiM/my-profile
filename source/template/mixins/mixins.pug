@@ -1,5 +1,8 @@
 mixin title (title, url, additionClass)
-    .title(style=`background: url('assets/img/backgrounds/${url}');background-size: 100% 100%` class=additionClass)= title
+    .title
+        svg(preserveAspectRatio="none" viewBox="0 0 498.161 175.44").about__section-title-background
+            use(xlink:href=`assets/img/svg/${url}_header.svg#${url}`)
+        div(class=additionClass)= title
 
 mixin poligon (color)
     svg(

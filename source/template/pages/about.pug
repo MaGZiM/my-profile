@@ -2,7 +2,7 @@ extends ../main-layout
 
 block variables
   - var title = 'About Me'
-  - var footerClass = 'footer-about'
+  - var footerClass = 'footer_transparent'
 
 block content
   section.section.hero
@@ -11,7 +11,8 @@ block content
 
     +socials('vk', 'github-alt', 'linkedin')
 
-    img(src='assets/img/backgrounds/header-portfolio.png').ghost-img-portfolio
+    svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 1175.495 313.961")
+      use(xlink:href="assets/img/svg/portfolio_header.svg#portfolio")
 
     a(href="").hamburger
       img(src="./assets/img/content/hamburger.png").hamburger-img
@@ -44,5 +45,8 @@ block content
       polygon(points="0,100 1000,100 1000,0")
 
   section.map
-    img.map-img(src="assets/img/backgrounds/map-img.jpg")
+    div#my-map
     include ../parts/contacts-pad
+  block scripts
+    script(type="text/javascript" src="./assets/js/app.js")
+    script(async defer type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAflkxBEAiCJOLSeX0GG3drrzs0d2IJdCg&callback=initMap")
