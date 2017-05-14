@@ -1,0 +1,154 @@
+$hamburger-size: 30px;
+
+.input-toggler {
+  display: none;
+
+  & + .menu-toggler {
+    z-index: 3;
+
+    .menu-toggler__line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: calc(#{$hamburger-size} / 5);
+      background: white;
+      border-radius: calc(#{$hamburger-size} / 10);
+      transition-property: transform, opacity;
+      transition-duration: .5s, .25s;
+      transition-delay: 0s, .5s;
+
+      &:nth-child(2) {
+        top: calc(#{$hamburger-size} / 5 * 2);
+      }
+
+      &:nth-child(3) {
+        top: calc(#{$hamburger-size} / 5 * 4);
+      }
+    }
+  }
+
+  & ~ .slides {
+    .left-slide {
+      transition-property: width;
+      transition-duration: .8s;
+    }
+
+    .right-slide {
+      transition-property: width;
+      transition-duration: .8s;
+    }
+
+    .slides__menu {
+      left: -100%;
+      transition-property: left;
+      transition-duration: 0s;
+    }
+  }
+
+  &:checked {
+
+    + .menu-toggler {
+      right: 45px;
+
+      .menu-toggler__line {
+        transition-delay: .25s, 0s;
+
+        &:nth-child(1) {
+          transform: translateY(calc(#{$hamburger-size} / 5 * 2)) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(calc(#{$hamburger-size} / 5 * -2)) rotate(-45deg);
+          //top: 0;
+        }
+      }
+    }
+
+    ~ .wrapper {
+      height: 100vh;
+    }
+
+    ~ .footer {
+      display: none;
+    }
+
+    ~ .slides {
+
+      .right-slide {
+        width: 50%;
+      }
+
+      .left-slide {
+        width: 50%;
+      }
+
+      .slides__menu {
+        left: 50%;
+        transition-delay: 0s;
+        transition-duration: 1s;
+      }
+    }
+  }
+}
+
+.menu-toggler {
+  display: block;
+  width: $hamburger-size;
+  height: $hamburger-size;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.slides {
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.left-slide, .right-slide {
+  height: 100%;
+  position: absolute;
+  width: 0;
+  background: rgba(0, 200, 0, .51);
+}
+
+.right-slide {
+  right: 0;
+}
+
+.left-slide {
+  left: 0;
+}
+
+.slides__menu {
+  width: 390px;
+  display: inline-block;
+  position: absolute;
+  font-size: 63px;
+  @include webis();
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slides__list {
+  z-index: 3;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.slides__list-item {
+  position: relative;
+  margin-bottom: 10px;
+  &:hover {
+    @include underline(-5px, white);
+  }
+}

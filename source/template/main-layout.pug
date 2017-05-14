@@ -24,7 +24,16 @@ html
 
   body
     .global
+      input.input-toggler#menuToggler(type="checkbox")
+      label.menu-toggler(for="menuToggler")
+        span.menu-toggler__line
+        span.menu-toggler__line
+        span.menu-toggler__line
       .wrapper
         block content
+      .slides
+        .left-slide
+        .right-slide
+        include parts/slides-menu
       include parts/footer
       block scripts

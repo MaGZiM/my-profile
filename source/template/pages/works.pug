@@ -11,9 +11,10 @@ block content
 
         +socials('vk', 'github-alt', 'linkedin')
 
-        img(src='assets/img/backgrounds/header-portfolio.png').ghost-img-portfolio
+        svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 505.101 165.036")
+            use(xlink:href="assets/img/svg/works_header.svg#works")
 
-        a(href="").hamburger
+        //-a(href="").hamburger
             img(src="./assets/img/content/hamburger.png").hamburger-img
 
         a(href="").down-arrow
