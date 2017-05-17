@@ -15,15 +15,33 @@ section.works
 
         .works__contents-right
             .works__large
-                img.works__large-img(src="./assets/img/content/works/works-big.png")
-        .works__small-set
-            .works__small.work-small__down
-                img.works__small-img(src="./assets/img/content/works/works-down.png")
-                .works__small-overlaydown
-                .works__small-arrow
-                    img(src="./assets/img/arrow_down.svg", alt="").down__icon
-            .works__small.work-small__up
-                img.works__small-img(src="./assets/img/content/works/works-up.png")
-                .works__small-overlayup
-                .works__small-arrow
-                    img(src="./assets/img/arrow_down.svg", alt="").up__icon
+                img.works__large-img(src="./assets/img/content/works/1.png")
+            .works__slider
+                .slider.slider__down
+                    .slider__display
+                        ul.slider__list.slider__list-down
+                            each num in [1,2,3]
+                                if num == 1
+                                    li.slider__item.active
+                                        img(src=`./assets/img/content/works/${num}.png`, alt="")
+                                else
+                                    li.slider__item
+                                        img(src=`./assets/img/content/works/${num}.png`, alt="")
+                    .slider__overlaydown
+                    a(href="#").slider__move.slider__move-down
+                        svg.slider__down-icon
+                            use(xlink:href="./assets/img/sprite.svg#arrow_down")
+                .slider.slider__up
+                    .slider__display
+                        ul.slider__list.slider__list-up
+                            each num in [1,2,3]
+                                if num == 3
+                                    li.slider__item.active
+                                        img(src=`./assets/img/content/works/${num}.png`, alt="")
+                                else
+                                    li.slider__item
+                                        img(src=`./assets/img/content/works/${num}.png`, alt="")
+                    .slider__overlayup
+                    a(href="#").slider__move.slider__move-up
+                        svg.slider__up-icon.slider__move-icon
+                            use(xlink:href="./assets/img/sprite.svg#arrow_down")
