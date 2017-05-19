@@ -1,6 +1,7 @@
 'use strict';
 
 global.$ = {
+  dev: true,
   package: require('./package.json'),
   config: require('./gulp/config'),
   path: {
@@ -12,7 +13,11 @@ global.$ = {
   gulp: require('gulp'),
   del: require('del'),
   browserSync: require('browser-sync').create(),
-  gp: require('gulp-load-plugins')()
+  gp: require('gulp-load-plugins')({
+    rename: {
+      'gulp-replace-task': 'replaceTask'
+    }
+  })
 };
 
 $.path.task.forEach(function(taskPath) {
@@ -24,14 +29,15 @@ $.gulp.task('default', $.gulp.series(
   'sprite:img',
   $.gulp.parallel(
     'sass',
-    'pug',
     'js:foundation',
     'js:process',
     'copy:image',
     'css:foundation',
     'sprite:svg',
-    'copy:fonts'
+    'copy:fonts',
+    'create:version'
   ),
+  'nodemon',
   $.gulp.parallel(
     'watch',
     'serve'
