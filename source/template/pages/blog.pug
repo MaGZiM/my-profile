@@ -1,9 +1,5 @@
 extends ../main-layout
 
-block variables
-    - var title = 'Blog'
-    - var footerClass = 'footer_solid'
-
 block content
     section.section.hero-blog
         .hero-blog__bg
@@ -42,5 +38,4 @@ block content
                         .post__title= post.title
                         .post__date= post.date
                         .post__contents
-                            each art in post.text
-                                p= art
+                            p= post.text

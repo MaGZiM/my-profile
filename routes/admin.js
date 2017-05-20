@@ -1,0 +1,41 @@
+const express = require('express');
+const router = express.Router();
+const formidable = require('formidable');
+const fs = require('fs');
+const path = require('path');
+const config = require('../config.json');
+const mongoose = require('mongoose');
+
+router.get('/', function (req, res) {
+  let obj = {
+    title: 'Admin page'
+  };
+  Object.assign(obj, req.app.locals.settings);
+  res.render('pages/admin', obj);
+});
+
+router.post('/addpost', function (req, res) {
+  // Требуем наличия заголовка, даты и текста
+  if(!req.body.title || !req.body.date || !req.body.text) {
+    return res.json({status: 'Укажите данные'});
+  }
+  const Model = mongoose.Model('blog');
+  let item = new Model({title: req.body.title, date: new Date(req.body.date), body: req.body.text});
+  item.save()
+    .then(i => {
+      return res.json({status: 'Запись успешно добавлена'});
+  }, e => {
+      // Если есть ошибки , получаем их список и передаем в шаблон
+     const error = Object
+       .keys(e.errors)
+       .map(key => e.errors[key].message)
+       .join(', ');
+
+     // Обрабатываем шаблон и отправляем в браузер
+    res.json({
+      status: 'При добавлении записи произошла ошибка'
+    });
+  });
+});
+
+module.exports = router;

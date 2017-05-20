@@ -16,6 +16,24 @@ const config = require('./config');
 // проектов
 const uploadDir = path.join(__dirname, config.upload);
 
+//подключение модулей
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose
+  .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
+    user: config.db.user,
+    password: config.db.password
+  })
+  .catch(e => {
+    console.error(e);
+    throw e;
+});
+require('./models/db-close');
+
+// Подключение моделей (сущности, описывающие коллекции базы данных)
+require('./models/blog');
+require('./models/skills');
+
 const app = express();
 const server = http.createServer(app);
 
@@ -25,7 +43,9 @@ const works = require('./routes/works');
 const blog = require('./routes/blog');
 const about = require('./routes/about');
 //const mail = require('./routes/mail');
-//const admin = require('./routes/admin');
+const admin = require('./routes/admin');
+
+
 
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
@@ -46,8 +66,8 @@ app.use('/', index);
 app.use('/works', works);
 app.use('/blog', blog);
 app.use('/about', about);
+app.use('/admin', admin);
 //app.use('/mail', mail);
-//app.use('/admin', admin);
 //app.use('/users', users);
 
 app.use(function (req, res) {
