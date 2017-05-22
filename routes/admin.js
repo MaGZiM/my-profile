@@ -11,7 +11,16 @@ router.get('/', function (req, res) {
     title: 'Admin page'
   };
   Object.assign(obj, req.app.locals.settings);
-  res.render('pages/admin', obj);
+
+  const Model = mongoose.model('skills');
+  console.log(Model.find());
+  Model
+    .find()
+    .then(skills => {
+
+    Object.assign(obj, {skills: skills});
+    res.render('admin', obj);
+  });
 });
 
 router.post('/addpost', function (req, res) {
@@ -20,7 +29,7 @@ router.post('/addpost', function (req, res) {
     return res.json({status: 'Укажите данные'});
   }
   const Model = mongoose.Model('blog');
-  let item = new Model({title: req.body.title, date: new Date(req.body.date), body: req.body.text});
+  let item = new Model({title: req.body.title, date: new Date(req.body.date), text: req.body.text});
   item.save()
     .then(i => {
       return res.json({status: 'Запись успешно добавлена'});
