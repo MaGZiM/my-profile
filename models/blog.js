@@ -12,8 +12,7 @@ const mongoose = require('mongoose'),
         required: [true, 'Укажите заголовок статьи']
       },
       date: {
-        type: Date,
-        default: Date.now
+        type: Date
       }
     }, {collection: 'posts'});
 

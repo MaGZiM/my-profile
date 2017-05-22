@@ -66,7 +66,7 @@ app.use('/', index);
 app.use('/works', works);
 app.use('/blog', blog);
 app.use('/about', about);
-app.use('/admin', admin);
+app.use('/admin.js', admin);
 //app.use('/mail', mail);
 //app.use('/users', users);
 

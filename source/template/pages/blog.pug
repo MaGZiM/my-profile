@@ -36,6 +36,12 @@ block content
                 each post in posts
                     li.post
                         .post__title= post.title
-                        .post__date= post.date
+                        -
+                            var date = new Date(post.date).toLocaleDateString('ru', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: '2-digit'
+                            })
+                        .post__date= date
                         .post__contents
                             p= post.text

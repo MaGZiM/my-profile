@@ -13,11 +13,9 @@ router.get('/', function(req, res, next) {
   Object.assign(obj, req.app.locals.settings);
 
   const Model = mongoose.model('blog');
-  console.log(Model.find());
   Model
     .find()
     .then(posts => {
-      console.log(posts + ">>>>>>>");
       Object.assign(obj, {posts: posts});
       res.render('blog', obj);
   });

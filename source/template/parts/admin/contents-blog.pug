@@ -6,11 +6,13 @@ li.contents-data#data-blog
             input(name="title" type="text" placeholder="Название").admin-text__input.blog-form__input#blog-form__title
         label.form__input-line
             -
-                var data = new Date().toLocaleDateString('ru', {
+                var date = new Date().toLocaleDateString('ru', {
                     year: 'numeric',
                     month: 'long',
                     day: '2-digit'
                 })
-            input(name="date" type="text" value=`${data}`).admin-text__input.blog-form__input#blog-form__date
+            input(name="date" type="text" value=`${date}`).admin-text__input.blog-form__input#blog-form__date
         textarea(name="text" placeholder="Содержание" rows="7" cols="40")#blog-form__text
-        input(type="submit" value="Добавить").contents-data__button#blog-form__btn
+        .form__input-block
+            input(type="submit" value="Добавить").contents-data__button#blog-form__btn
+            .status

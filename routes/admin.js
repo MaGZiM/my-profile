@@ -13,7 +13,6 @@ router.get('/', function (req, res) {
   Object.assign(obj, req.app.locals.settings);
 
   const Model = mongoose.model('skills');
-  console.log(Model.find());
   Model
     .find()
     .then(skills => {
@@ -28,7 +27,7 @@ router.post('/addpost', function (req, res) {
   if(!req.body.title || !req.body.date || !req.body.text) {
     return res.json({status: 'Укажите данные'});
   }
-  const Model = mongoose.Model('blog');
+  const Model = mongoose.model('blog');
   let item = new Model({title: req.body.title, date: new Date(req.body.date), text: req.body.text});
   item.save()
     .then(i => {
