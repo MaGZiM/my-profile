@@ -11,6 +11,11 @@ global.$ = {
     app: require('./gulp/paths/app.js')
   },
   gulp: require('gulp'),
+  browserify : require('browserify'),
+  source : require('vinyl-source-stream'),
+  buffer : require('vinyl-buffer'),
+  babel : require('babelify'),
+  merge: require('merge-stream'),
   del: require('del'),
   browserSync: require('browser-sync').create(),
   gp: require('gulp-load-plugins')({
@@ -41,5 +46,19 @@ $.gulp.task('default', $.gulp.series(
   $.gulp.parallel(
     'watch',
     'serve'
+  )
+));
+
+
+$.gulp.task('build', $.gulp.series(
+  'clean',
+  $.gulp.parallel(
+    'sass',
+    'js:foundation',
+    'js:process',
+    'copy:image',
+    'copy:fonts',
+    'css:foundation',
+    'create:version'
   )
 ));
