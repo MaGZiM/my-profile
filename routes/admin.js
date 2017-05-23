@@ -6,7 +6,15 @@ const path = require('path');
 const config = require('../config.json');
 const mongoose = require('mongoose');
 
-router.get('/', function (req, res) {
+const isAdmin = (req, res, next) => {
+  if(req.session.isAdmin) {
+    return next();
+  }
+
+  res.redirect('/');
+};
+
+router.get('/', isAdmin, function (req, res) {
   let obj = {
     title: 'Admin page'
   };
@@ -22,7 +30,7 @@ router.get('/', function (req, res) {
   });
 });
 
-router.post('/addpost', function (req, res) {
+router.post('/addpost', isAdmin, function (req, res) {
   // Требуем наличия заголовка, даты и текста
   if(!req.body.title || !req.body.date || !req.body.text) {
     return res.json({status: 'Укажите данные'});

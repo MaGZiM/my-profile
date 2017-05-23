@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('../config');
 
 mongoose.connection.on('connected', function () {
-  console.log(`Mongoose default connection open mongodb://${config.db.host}:${config.db.port}/${config.db.name}`);
+  console.log(`Mongoose default connection open mongodb://admin:12345@ds143777.mlab.com:43777/portfolio`);
 });
 
 // If the connection throws an error

@@ -6,15 +6,23 @@
 }
 
 .welcome-tab {
-  height: 390px;
-  width: 380px;
   text-align: center;
-  padding-top: 40px;
   background-color: rgba(18, 38, 32, .6);
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   @include centered();
+
+
+}
+
+.welcome-tab__about {
+  height: 390px;
+  width: 380px;
+  padding-top: 40px;
+  display: none;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
 
   .user__name {
     font-size: 28px;
@@ -29,6 +37,10 @@
   }
 }
 
+.user__desc {
+  margin-bottom: 20px;
+}
+
 .index__foot {
   display: inline-block;
   position: absolute;
@@ -39,3 +51,53 @@
   @include roboto();
 }
 
+.form__login {
+  padding-top: 35px;
+  width: 380px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .contact-form__button-left, .contact-form__button-right {
+    width: calc(50% - 1px);
+  }
+}
+
+.form__subtitle {
+  position: relative;
+  font-size: 35px;
+  margin-bottom: 35px;
+  @include webis();
+  @include underline(-10px, white)
+}
+
+.form-login__input-line {
+  width: 340px;
+  height: 45px;
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 22px;
+  overflow: hidden;
+ }
+
+.form__input-img {
+  width: 45px;
+  height: 100%;
+  background: #f0efe9;
+}
+
+.form__input {
+  width: calc(100% - 45px);
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+.contact-form__buttons {
+  align-self: stretch;
+  width: 100%;
+}
+
+.contact-form__btn-text {
+  line-height: 45px;
+}

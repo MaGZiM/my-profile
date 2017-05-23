@@ -7,6 +7,8 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const jsonfile = require('jsonfile');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const fileVersionControl = 'version.json';
 const currentStatic = require('./gulp/config').root;
@@ -19,7 +21,8 @@ const uploadDir = path.join(__dirname, config.upload);
 //подключение модулей
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose
+mongoose.connect('mongodb://admin:12345@ds143777.mlab.com:43777/portfolio');
+/*mongoose
   .connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.name}`, {
     user: config.db.user,
     password: config.db.password
@@ -27,12 +30,13 @@ mongoose
   .catch(e => {
     console.error(e);
     throw e;
-});
+});*/
 require('./models/db-close');
 
 // Подключение моделей (сущности, описывающие коллекции базы данных)
 require('./models/blog');
 require('./models/skills');
+require('./models/user');
 
 const app = express();
 const server = http.createServer(app);
@@ -42,6 +46,8 @@ const index = require('./routes/index');
 const works = require('./routes/works');
 const blog = require('./routes/blog');
 const about = require('./routes/about');
+// maybe needs to be removed
+const login = require('./routes/login');
 //const mail = require('./routes/mail');
 const admin = require('./routes/admin');
 
@@ -58,17 +64,28 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// folder build could be used instead of public
-//app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'secret',
+  key: 'keys',
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    maxAge: null
+  },
+  saveUninitialized: false,
+  resave: false,
+  store: new MongoStore({mongooseConnection: mongoose.connection})
+}));
+
 app.use(express.static(path.join(__dirname, currentStatic)));
 
 app.use('/', index);
 app.use('/works', works);
 app.use('/blog', blog);
 app.use('/about', about);
-app.use('/admin.js', admin);
-//app.use('/mail', mail);
-//app.use('/users', users);
+app.use('/admin', admin);
+app.use('/login', login);
 
 app.use(function (req, res) {
   res.status(404);
@@ -104,25 +121,5 @@ server.on('listening', function () {
       }
     })
 })
-
-/*
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-*/
 
 module.exports = app;

@@ -2,6 +2,8 @@ import prepareSend from './prepareSend';
 
 const formBlog = document.querySelector('#data-blog__form');
 
+formBlog.addEventListener('submit', prepareSendPost);
+
 function prepareSendPost(e) {
   e.preventDefault();
   let data = {

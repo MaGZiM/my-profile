@@ -1,0 +1,31 @@
+.welcome-tab
+    .welcome-tab__about
+        .user__photo.user__photo_gen
+            .user__photo-avatar
+                img(src="assets/img/content/user.jpg", alt="").user__photo-img
+        .user__name Рысухин Максим
+        .user__desc Личный сайт веб-разработчика
+        +socials('vk', 'github', 'linkedin')
+        .contact-form__buttons
+            a(href="./works")
+                input(type="submit" value="Мои работы").contact-form__button-left
+            a(href="./about")
+                input(type="submit" value="Обо мне").contact-form__button-center
+            a(href="./blog")
+                input(type="submit" value="Блог").contact-form__button-right
+    .welcome-tab__register
+        form.form__login#login(action='login' method="POST")
+            .form__subtitle АВТОРИЗУЙТЕСЬ
+            .status
+            label.form-login__input-line
+                .form__input-img
+                    svg.form__input-icon
+                input(name="login" type="text" placeholder="Логин").form__input
+            label.form-login__input-line
+                .form__input-img
+                    svg.form__input-icon
+                input(name="password" type="password" placeholder="Пароль").form__input
+            .contact-form__buttons
+                a(href="/").contact-form__button-left
+                    .contact-form__btn-text На главную
+                input(name="" type="submit" value="Войти").contact-form__button-right

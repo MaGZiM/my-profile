@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
   Object.assign(obj, req.app.locals.settings);
 
   const Model = mongoose.model('skills');
-  console.log(Model.find());
   Model
     .find()
     .then(skills => {
