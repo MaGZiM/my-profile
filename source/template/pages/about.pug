@@ -14,31 +14,30 @@ block content
       img(src="./assets/img/content/hamburger.png").hamburger-img
 
 
-    a(href="").down-arrow
+    a(href="#about-section").down-arrow
       img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
 
     .hero__title_gen
       .user.hero__user-block
         .user__photo.user__photo_gen
-          .user__photo-avatar
-            img(src="assets/img/content/user.jpg", alt="").user__photo-img
+          img(src="assets/img/avas/my-ava.jpg", alt="").user__photo-img
         .user__name Рысухин Максим
         .user__desc Личный сайт веб-разработчика
 
-  section.section.about
+  section.section.about#about-section
     .about__left
       include ../parts/user-about
     .about__right
       include ../parts/about-data
     svg(
-    viewbox="0 0 1000 100"
-    preserveAspectRatio="none"
-    class="triangle triangle_fill_about about__triangles")
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_about about__triangles")
       polygon(points="0,0 0,100 1000,100")
     svg(
-    viewbox="0 0 1000 100"
-    preserveAspectRatio="none"
-    class="triangle triangle_fill_skills about__triangles")
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_skills about__triangles")
       polygon(points="0,100 1000,100 1000,0")
 
   section.map

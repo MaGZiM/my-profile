@@ -1,5 +1,20 @@
 $hamburger-size: 30px;
 
+.hamburger {
+  position: absolute;
+  top: 34px;
+  right: 30px;
+}
+
+.hamburger-img {
+  height: $hamburger-size;
+  width: 100%;
+}
+
+.slides {
+  z-index: 2;
+}
+
 .input-toggler {
   display: none;
 
@@ -28,6 +43,11 @@ $hamburger-size: 30px;
   }
 
   & ~ .slides {
+    left: -200%;
+    transition-property: left;
+    transition-duration: 0s;
+    transition-delay: 1s;
+
     .left-slide {
       transition-property: width;
       transition-duration: .8s;
@@ -77,6 +97,9 @@ $hamburger-size: 30px;
     }
 
     ~ .slides {
+      left: 0;
+      transition-delay: 0s;
+      transition-duration: 0s;
 
       .right-slide {
         width: 50%;
@@ -116,7 +139,7 @@ $hamburger-size: 30px;
   height: 100%;
   position: absolute;
   width: 0;
-  background: rgba(0, 200, 0, .51);
+  background: rgba(108, 156, 90, .9);
 }
 
 .right-slide {
@@ -147,7 +170,7 @@ $hamburger-size: 30px;
 
 .slides__list-item {
   position: relative;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   &:hover {
     @include underline(-5px, white);
   }
