@@ -1,6 +1,9 @@
 section.section.feedbacks
     .feedback__container
-        +title("ЧТО ОБО МНЕ ГОВОРЯТ", "header-about.png", "feedback__container-title")
+        .section-title
+            svg.section__title-img(preserveAspectRatio="none" viewBox="0 0 498.161 175.44")
+                use(xlink:href="assets/img/svg/about_header.svg#about")
+            +title("ЧТО ОБО МНЕ ГОВОРЯТ", 'section-title__text')
         ul.feedbacks__list
             li.feedbacks-item
                 .feedbacks-item__author-pic
@@ -17,7 +20,7 @@ section.section.feedbacks
                 .feedbacks-item__author Сабанцев Владимир
                 .feedbacks-item__author-pos &ndash; преподаватель
         .contact-form.feedbacks__contact-form
-            +title("СВЯЗАТЬСЯ СО МНОЙ", "", "contact-form__title")
+            .contact-form__title СВЯЗАТЬСЯ СО МНОЙ
             .contact-form__fields
                 input.contact-field.contact-field__name(type="text" placeholder="name")
                 input.contact-field.contact-field__email(type="email" placeholder="email")
@@ -25,8 +28,12 @@ section.section.feedbacks
             .contact-form__buttons
                 input(type="submit" value="Отправить").contact-form__button-left
                 input(type="submit" value="Очистить").contact-form__button-right
-        a(href="").feedbacks__arrow
-            img(src="./assets/img/arrow_down.svg", alt="").feedbacks-arrow__icon
+        a(href="#start").feedbacks__arrow
+            svg.feedbacks-arrow__icon
+                use(xlink:href="assets/img/sprite.svg#arrow_down")
+        img.feedbacks__leaves#feedbacks__leave-img-1(src="assets/img/content/section-feedbacks/leave1.png")
+        img.feedbacks__leaves#feedbacks__leave-img-2(src="assets/img/content/section-feedbacks/leave2.png")
+        img.feedbacks__leaves#feedbacks__leave-img-3(src="assets/img/content/section-feedbacks/leave3.png")
     .empty
     .feedbacks__background
         img.feedbacks__background-img(src="./assets/img/backgrounds/feedback-backgrnd.png")

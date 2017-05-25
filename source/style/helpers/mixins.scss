@@ -63,6 +63,17 @@
   }
 }
 
+@mixin tablet-med() {
+  @media screen and (max-width: 482px) {
+    @content;
+  }
+}
+
+@mixin tablet-narrow() {
+  @media screen and (max-width: 385px) {
+    @content;
+  }
+}
 
 @mixin phone() {
   @media screen and (max-width: 320px) {

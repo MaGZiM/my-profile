@@ -1,0 +1,11 @@
+.ghost-img-portfolio {
+  padding: 0 25px;
+  top: 22%;
+  width: 1180px;
+  max-width: 95%;
+  height: 300px;
+  fill: black;
+  fill-opacity: .4;
+  @include centered(x)
+}
+

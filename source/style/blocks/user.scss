@@ -6,6 +6,7 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  border: 2px solid rgba(100, 100, 100, .7);
   overflow: hidden;
   display: inline-block;
   align-self: center;
@@ -19,22 +20,15 @@
   margin: 0;
 }
 
-
-.user__photo-avatar {
-  display: block;
-  max-width: 100%;
-}
-
 .user__photo-img {
-  width: 300px;
-  margin-left: -40px;
+  width: 100%;
 }
 
 .user__name {
   margin-bottom: 10px;
   color: #ffffff;
   font-size: 35px;
-  @include roboto()
+  @include roboto(medium)
 }
 
 .user__desc {

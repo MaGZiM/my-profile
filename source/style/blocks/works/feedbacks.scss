@@ -1,17 +1,41 @@
 .feedbacks {
   //background: url("./assets/img/backgrounds/feedback-backgrnd.png"); // no-repeat center bottom;
   background-size: auto 100%;
-  position: relative;
+  padding-top: 30px;
 
   @include phone() {
     padding-top: 30px;
   }
+
+  .section-title {
+    margin-bottom: 60px;
+
+    @media screen and (max-width: 425px) {
+      max-width: 95%;
+    }
+  }
+
+  .section-title__text {
+    line-height: 1em;
+    @include underline(-25px)
+
+    @media screen and (max-width: 425px) {
+      font-size: 35px;
+    }
+  }
 }
 
 .feedback__container {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-flow: column;
   align-items: center;
+
+  @include laptop() {
+    width: 100%;
+  }
 }
 
 .feedback__container-title {
@@ -41,8 +65,10 @@
 .feedbacks__list {
   width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
-  @include phone() {
+  @media screen and (max-width: 590px) {
     flex-direction: column;
     width: 100%;
     margin-bottom: 30px;
@@ -50,14 +76,14 @@
 }
 
 .feedbacks-item {
-  width: 50%;
+  width: 380px;
   text-align: center;
   margin-bottom: 70px;
   padding: 0 10px;
 
-  @include phone() {
+  @media screen and (max-width: 590px) {
+    width: 90%;
     flex-direction: column;
-    width: 100%;
     padding: 0 10px;
     margin-bottom: 20px;
   }
@@ -94,37 +120,17 @@
   color: $main-title;
 }
 
-.feedbacks__contact-form {
-  margin-bottom: 70px;
-
-  @include phone() {
-    width: 300px;
-    padding-top: 20px;
-    margin-bottom: 50px;
-  }
-}
-
-.contact-form__title {
-  font-size: 35px;
-  @include underline(-20px, $subtitle);
-  color: $subtitle;
-  margin-bottom: 30px;
-
-  @include phone() {
-    font-size: 21px;
-    margin-bottom: 0;
-
-    &:after {
-      bottom: -10px;
-    }
-  }
-}
-
 .feedbacks-arrow__icon {
+  height: 16px;
+  width: 26px;
   display: block;
-  margin: 0 auto;
+  fill: #c2c2c2;
   transform: rotate(180deg);
   margin-bottom: 70px;
+
+  &:hover {
+    fill: white;
+  }
 }
 
 .empty {
@@ -138,9 +144,44 @@
     height: 275px;
   }
 
+  @include tablet-med {
+    height: 325px;
+  }
+
+  @media screen and (max-width: 385px) {
+    height: 345px;
+  }
+
   @include phone() {
     height: 345px;
   }
+
+  @media screen and (max-width: 313px) {
+    height: 425px;
+  }
+}
+
+.feedbacks__leaves {
+  position: absolute;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+#feedbacks__leave-img-1 {
+  bottom: 620px;
+  left: 175px;
+}
+
+#feedbacks__leave-img-2 {
+  top: 80px;
+  left: 35px;
+}
+
+#feedbacks__leave-img-3 {
+  top: 405px;
+  right: 5px;
 }
 
 .feedbacks__background-img {

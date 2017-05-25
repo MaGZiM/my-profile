@@ -5,29 +5,30 @@ extends ../main-layout
     - var footerClass = 'footer_transparent'
 
 block content
-    section.section.hero
+    section.section.hero#start
         .hero__bg
             img(src="assets/img/header-img.jpg", alt="").hero__bg-img
 
         +socials('vk', 'github-alt', 'linkedin')
 
-        svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 505.101 165.036")
-            use(xlink:href="assets/img/svg/works_header.svg#works")
+        svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 1175.495 313.961")
+            use(xlink:href="assets/img/svg/portfolio_header.svg#portfolio")
 
         //-a(href="").hamburger
             img(src="./assets/img/content/hamburger.png").hamburger-img
 
-        a(href="").down-arrow
-            img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
+        a(href="#works-up").down-arrow
+            svg.down-arrow__icon
+                use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         .hero__title_gen
             .user.hero__user-block
                 .user__photo.user__photo_gen
                     .user__photo-avatar
-                        img(src="./assets/img/content/user.jpg", alt="").user__photo-img
+                        img(src="./assets/img/avas/my-ava.jpg", alt="avatar").user__photo-img
                 .user__name Рысухин Максим
                 .user__desc Личный сайт веб-разработчика
 
-    include ../parts/section-works
+    include ../parts/works/section-works
 
-    include ../parts/feedbacks
+    include ../parts/works/feedbacks

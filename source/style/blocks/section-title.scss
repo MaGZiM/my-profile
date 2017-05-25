@@ -1,3 +1,22 @@
 .section-title {
-  display: inline-block;
+  width: 400px;
+  height: 160px;
+  position: relative;
+}
+
+.section-title__text {
+  font-size: 63px;
+  width: 100%;
+  color: $main-title;
+  text-align: center;
+  @include underline();
+  @include centered();
+  @include webis();
+}
+
+.section__title-img {
+  fill: #ebefe2;
+  height: 80%;
+  width: 100%;
+  position: absolute;
 }

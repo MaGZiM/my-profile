@@ -4,7 +4,7 @@ footer {
   bottom: 0;
   width: 100%;
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     font-size: 14px;
   }
 }
@@ -32,17 +32,13 @@ footer {
   justify-content: space-between;
   padding: 25px 30px 25px 30px;
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     padding: 0;
   }
 }
 
 .footer__left, .footer__center, .footer__right {
   width: 33.3%;
-
-  @include phone() {
-    padding: 15px;
-  }
 }
 
 .footer__left, .footer__center {
@@ -52,7 +48,7 @@ footer {
     width: 50%;
   }
 
-  @include phone() {
+  @media screen and (max-width: 360px){
     width: 100%;
   }
 }
@@ -62,9 +58,10 @@ footer {
     padding-right: 20px;
   }
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     text-align: center;
     line-height: 1.62em;
+    width: 100%;
   }
 }
 
@@ -87,7 +84,7 @@ footer {
       top: 2px;
     }
 
-    @include phone() {
+    @media screen and (max-width: 360px) {
       display: none;
     }
   }
@@ -104,12 +101,13 @@ footer {
     left: 0;
   }
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     padding: 15px;
     border-top: 1px solid #a1a7a5;
     border-bottom: 1px solid #a1a7a5;
     align-items: center;
     padding-bottom: 10px;
+    width: 100%;
   }
 
   .socials__link:hover {
@@ -128,9 +126,8 @@ footer {
     padding-left: 0;
   }
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     padding: 15px;
-    //height: auto;
     text-align: center;
   }
 }
@@ -144,6 +141,7 @@ footer {
 }
 
 .row-bottom-writing {
+  text-align: center;
   color: white;
   @include roboto(light);
   padding: 7px;
@@ -162,6 +160,7 @@ footer {
 
   &__link:hover {
     color: #a1a7a5;
+    cursor: pointer;
   }
 
   @include laptop() {
@@ -173,7 +172,7 @@ footer {
     max-width: 310px;
   }
 
-  @include phone() {
+  @media screen and (max-width: 360px) {
     padding-left: 0;
     padding-top: 0;
     margin-bottom: 10px;

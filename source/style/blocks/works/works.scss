@@ -5,10 +5,6 @@
   display: flex;
   justify-content: center;
 
-  .title {
-    display: flex;
-  }
-
   @include phone() {
     height: 95px;
   }
@@ -34,42 +30,25 @@
   flex-direction: column;
   flex-wrap: wrap;
 
-  @include tablet() {
+  @media screen and (max-width: 1120px) {
     flex-wrap: nowrap;
-    height: 1010px;
+    height: auto;
   }
 
   @include phone() {
-    height: 701px;
-  }
-}
-
-.works__schoolsite, .works__contents-right {
-  width: 50%;
-
-  @include tablet() {
-    width: 100%;
-  }
-}
-
-.works__contents-right {
-  @include tablet() {
-    order: -1;
-    height: 527px;
-  }
-
-  @include phone() {
-    height: 256px;
+    height: auto;
   }
 }
 
 .works__schoolsite {
   background: $about-me;
   height: 100%;
+  width: 50%;
   position: relative;
 
-  @include tablet() {
-    height: 275px;
+  @media screen and (max-width: 1120px) {
+    height: 295px;
+    width: 100%;
   }
 
   @include phone() {
@@ -83,9 +62,9 @@
   text-align: center;
   @include centered()
 
-  @include tablet() {
+  @media screen and (max-width: 1120px) {
     width: 100%;
-    height: 270px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -149,6 +128,7 @@
 
 .schoolsite__btn-icon {
   display: inline;
+  margin-right: 10px;
 }
 
 .schoolsite__btn-txt {
@@ -158,7 +138,13 @@
 .works__large {
   background: #e1e4d7;
   height: 525px;
+  width: 50%;
   position: relative;
+
+  @media screen and (max-width: 1120px) {
+    width: 100%;
+    order: -1;
+  }
 
   @include phone() {
     height: 256px;
@@ -168,15 +154,20 @@
 .works__large-img {
   width: 100%;
   @include centered();
+  @media screen and (max-width: 1120px) {
+    max-height: 100%;
+    max-width: 90%;
+  }
 }
 
 .works__slider {
   height: 225px;
+  width: 50%;
   display: flex;
-}
 
-.works__slider{
-  width: 100%;
+  @media screen and (max-width: 1120px) {
+    width: 100%;
+  }
 }
 
 .slider {
@@ -253,19 +244,22 @@
   fill: white;
   display: inline-block;
   z-index: 1;
+  @include centered()
 
   &:hover {
     cursor: pointer;
+    fill: #eee;
   }
 }
 
 .slider__down-icon {
-  @include centered()
+  &:active {
+    top: 53%
+  }
 }
 
 .slider__up-icon {
-  position: absolute;
-  transform: translate(-50%, -50%) rotate(180deg);
-  top: 50%;
-  left: 50%;
+  &:active {
+    top: 47%;
+  }
 }
