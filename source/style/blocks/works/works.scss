@@ -7,20 +7,11 @@
 
   @include phone() {
     height: 95px;
-  }
-}
 
-.works__section-title {
-  font-size: 63px;
-  margin-top: -15px;
-  color: $main-title;
-  @include underline(45px);
-  align-self: center;
-
-  @include phone() {
-    font-size: 35px;
-    padding: 20px 25px 5px;
-    width: 240px;
+    .section-title {
+      height: 100%;
+      width: 80%;
+    }
   }
 }
 

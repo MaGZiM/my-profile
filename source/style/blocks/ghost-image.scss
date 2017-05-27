@@ -7,5 +7,9 @@
   fill: black;
   fill-opacity: .4;
   @include centered(x)
+
+  @include tablet {
+    display: none;
+  }
 }
 

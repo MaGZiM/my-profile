@@ -44,44 +44,36 @@
 }
 
 .header__blog-title {
+  position: relative;
   font-size: 63px;
-  padding: 35px 65px 60px;
-  @include underline(45px, white);
+  margin-bottom: 15px;
+  @include underline(0, white);
   color: white;
-  margin-top: -30px;
+  @include webis
 
   @include tablet() {
     font-size: 49px;
-    margin-top: -25px;
-    padding-bottom: 58px;
-
-    &:after {
-      bottom: 55px;
-    }
+    padding-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   @include phone() {
     font-size: 35px;
+    margin-bottom: 10px;
 
     &:after {
       width: 56px;
       margin-left: -28px;
-      bottom: 47px;
     }
   }
 }
 
 .blog__desc {
   color: white;
-  margin-top: -25px;
+  @include roboto()
 
   @include tablet() {
     font-size: 14px;
-    margin-top: -35px;
-  }
-
-  @include phone() {
-    margin-top: -30px;
   }
 }
 
@@ -128,6 +120,9 @@
   @include laptop() {
     width: 310px;
   }*/
+  @include laptop {
+    width: 310px;
+  }
 
   @include tablet() {
     display: none;
@@ -184,9 +179,11 @@
 
 .blog-content {
   padding-left: 120px;
+  width: 1050px;
 
   @include laptop() {
     padding-left: 100px;
+    width: 770px;
   }
   @include tablet() {
     padding-left: 0;

@@ -12,10 +12,15 @@
   @include underline();
   @include centered();
   @include webis();
+
+  @media screen and (max-width: 425px) {
+    font-size: 35px;
+  }
 }
 
 .section__title-img {
-  fill: #ebefe2;
+  fill: #6C9C5A;
+  fill-opacity: .4;
   height: 80%;
   width: 100%;
   position: absolute;

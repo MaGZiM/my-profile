@@ -1,16 +1,5 @@
 $hamburger-size: 30px;
 
-.hamburger {
-  position: absolute;
-  top: 34px;
-  right: 30px;
-}
-
-.hamburger-img {
-  height: $hamburger-size;
-  width: 100%;
-}
-
 .slides {
   z-index: 2;
 }
@@ -158,6 +147,15 @@ $hamburger-size: 30px;
   @include webis();
   top: 50%;
   transform: translate(-50%, -50%);
+
+  @include tablet {
+    font-size: 50px;
+    width: 100%;
+  }
+
+  @include phone {
+    font-size: 35px;
+  }
 }
 
 .slides__list {

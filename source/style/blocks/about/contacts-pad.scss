@@ -1,6 +1,6 @@
 .contacts-pad {
   position: absolute;
-  height: 310px;
+  padding: 20px 40px;
   width: 380px;
   background: rgba(244, 245, 240, .8);
   @include centered();
@@ -8,14 +8,20 @@
   border-radius: 5px;
   z-index: 5;
 
+  @include tablet {
+    padding: 10px 20px;
+    width: 350px;
+    max-width: 95%;
+  }
+
   @include phone() {
-    order: -1;
-    width: 320px;
+    max-width: 100%;
     border-radius: 0;
     align-self: center;
     top: 0;
     left: 0;
     transform: translate(0, 0);
+    padding: 20px 15px;
   }
 }
 
@@ -25,27 +31,44 @@ ul.contacts {
 }
 
 .contacts-pad__title {
-  padding-top: 25px;
   padding-bottom: 21px;
   margin-bottom: 20px;
   font-size: 35px;
   display: inline-block;
   position: relative;
-  @include underline();
+  @include underline(10px);
   @include webis
+
+  @include phone {
+    font-size: 28px;
+    margin-bottom: 0;
+    @include underline(15px)
+  }
 }
 
 .contacts__item {
-  padding: 8px 40px;
+  margin-bottom: 20px;
+
+  @include phone {
+    margin-bottom: 10px;
+  }
 }
 
 .contact__icon {
   width: 30px;
   font-size: 23px;
   color: $btn-color;
+
+  @include phone {
+    font-size: 20px;
+  }
 }
 
 .contact__self {
   display: inline;
   @include roboto()
+
+  @include phone {
+    font-size: 14px;
+  }
 }

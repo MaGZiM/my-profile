@@ -1,5 +1,8 @@
 .user-about__section-title
-    +title('ОБО МНЕ', 'about', 'about__section-title')
+    .section-title
+        svg.section__title-img(preserveAspectRatio="none" viewBox="0 0 498.161 175.44")
+            use(xlink:href="assets/img/svg/about_header.svg#about")
+        +title("ОБО МНЕ", 'about__section-title')
 
 .user-about
     .user-about__picture

@@ -1,6 +1,5 @@
 .map {
   position: relative;
-  height: 930px;
 
   @include phone() {
     display: flex;
@@ -10,6 +9,15 @@
 }
 
 #my-map {
-  height: 100%;
+  //height: 930px;
+  height: 100vh;
   position: relative;
+
+  @include laptop {
+    height: 785px;
+  }
+
+  @include tablet {
+    height: 635px;
+  }
 }

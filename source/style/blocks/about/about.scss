@@ -40,4 +40,8 @@
 
 .about-data__content {
   padding-left: 40px;
+
+  @include tablet {
+    padding: 15px;
+  }
 }

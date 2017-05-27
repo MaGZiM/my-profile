@@ -10,18 +10,19 @@ block content
         //-a(href="").hamburger
             img(src="./assets/img/content/hamburger.png").hamburger-img
 
-        a(href="").down-arrow
-            img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
+        a(href="#blog-section").down-arrow
+            svg.down-arrow__icon
+                use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         .hero__title.hero__title_blog
             .user.hero__user-block
                 .user__photo
                     .user__photo-avatar
                         img(src="./assets/img/avas/my-photo.jpg", alt="").user__photo-img
-                +title("БЛОГ", "header-blog.png", "header__blog-title")
+                +title("БЛОГ", "header__blog-title")
                 .blog__desc Статьи, которые я написал
 
-    section.section.blog
+    section.section.blog#blog-section
         +poligon("f8f9f5")
         aside.sidebar
             ul.post-refs__list
