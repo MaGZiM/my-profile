@@ -2,6 +2,7 @@
   //background: url("./assets/img/backgrounds/feedback-backgrnd.png"); // no-repeat center bottom;
   background-size: auto 100%;
   padding-top: 30px;
+  position: relative;
 
   @include phone() {
     padding-top: 30px;
@@ -67,11 +68,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 500px;
 
   @media screen and (max-width: 590px) {
     flex-direction: column;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 530px;
   }
 }
 
@@ -120,6 +122,13 @@
   color: $main-title;
 }
 
+.feedbacks__arrow {
+  z-index: 1;
+  height: 16px;
+  width: 26px;
+  margin-bottom: 50px;
+}
+
 .feedbacks-arrow__icon {
   height: 16px;
   width: 26px;
@@ -127,6 +136,7 @@
   fill: #c2c2c2;
   transform: rotate(180deg);
   margin-bottom: 70px;
+  z-index: 4;
 
   &:hover {
     fill: white;
@@ -184,8 +194,18 @@
   right: 5px;
 }
 
-.feedbacks__background-img {
+.feedbacks__background {
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
+  margin: auto;
+}
+
+.feedbacks__background-img {
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  display: block;
   z-index: -1;
 }

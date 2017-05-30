@@ -1,4 +1,5 @@
 import prepareSend from './prepareSend';
+import * as works from './works/works';
 
 const formLogin = document.querySelector('#login');
 

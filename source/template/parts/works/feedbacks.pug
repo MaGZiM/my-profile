@@ -9,25 +9,16 @@ section.section.feedbacks
                 .feedbacks-item__author-pic
                     img.feedbacks-item__author-first(src="./assets/img/avas/dkovalchuk-photo.jpg")
                 .feedbacks-item__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool!
-                                      | 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                    | 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .feedbacks-item__author Ковальчук Дмитрий
                 .feedbacks-item__author-pos &ndash; Основатель Loftschool
             li.feedbacks-item
                 .feedbacks-item__author-pic
                     img.feedbacks-item__author-second(src="./assets/img/avas/vsabantsev-photo.jpg")
                 .feedbacks-item__text Этот код выдержит любые испытания. Только пожалуйста,
-                                      | не загружайте сайт на слишком старых браузерах!
+                    | не загружайте сайт на слишком старых браузерах!
                 .feedbacks-item__author Сабанцев Владимир
                 .feedbacks-item__author-pos &ndash; преподаватель
-        .contact-form.feedbacks__contact-form
-            .contact-form__title СВЯЗАТЬСЯ СО МНОЙ
-            .contact-form__fields
-                input.contact-field.contact-field__name(type="text" placeholder="name")
-                input.contact-field.contact-field__email(type="email" placeholder="email")
-                textarea.contact-field.contact-field__message(placeholder="Ваше сообщение")
-            .contact-form__buttons
-                input(type="submit" value="Отправить").contact-form__button-left
-                input(type="submit" value="Очистить").contact-form__button-right
         a(href="#start").feedbacks__arrow
             svg.feedbacks-arrow__icon
                 use(xlink:href="assets/img/sprite.svg#arrow_down")
@@ -37,3 +28,14 @@ section.section.feedbacks
     .empty
     .feedbacks__background
         img.feedbacks__background-img(src="./assets/img/backgrounds/feedback-backgrnd.png")
+    .feedbacks__blur-wrapper
+        .contact-form__blur
+        .contact-form.feedbacks__contact-form
+            .contact-form__title СВЯЗАТЬСЯ СО МНОЙ
+            .contact-form__fields
+                input.contact-field.contact-field__name(type="text" placeholder="name")
+                input.contact-field.contact-field__email(type="email" placeholder="email")
+                textarea.contact-field.contact-field__message(placeholder="Ваше сообщение")
+            .contact-form__buttons
+                input(type="submit" value="Отправить").contact-form__button-left
+                input(type="submit" value="Очистить").contact-form__button-right
