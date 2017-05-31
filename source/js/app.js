@@ -1,5 +1,6 @@
 import prepareSend from './prepareSend';
 import * as works from './works/works';
+import * as parallax from './parallax/parallax'
 
 const formLogin = document.querySelector('#login');
 

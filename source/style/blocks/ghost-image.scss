@@ -1,12 +1,18 @@
 .ghost-img-portfolio {
-  padding: 0 25px;
-  top: 22%;
-  width: 1180px;
-  max-width: 95%;
+  position: absolute;
+  top: 27%;
+  left: 5%;
+  right: 5%;
+  height: 300px;
+  width: 90%;
   height: 300px;
   fill: black;
   fill-opacity: .4;
-  @include centered(x)
+
+  @include laptop {
+    height: 240px;
+    top: 26%;
+  }
 
   @include tablet {
     display: none;
