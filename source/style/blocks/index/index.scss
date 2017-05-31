@@ -2,7 +2,7 @@
   position: relative;
   background: url("../../assets/img/header-about.png") no-repeat center center fixed;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .content {
@@ -64,21 +64,12 @@
   }
 }
 
-.welcome-tab {
-  text-align: center;
-  width: 380px;
-  background-color: rgba(18, 38, 32, .6);
-  border-radius: 5px;
-  @include centered();
-
-  @include tablet() {
-    width: 348px;
-    max-width: 95%;
-  }
-
-  @include phone() {
-    width: 300px;
-  }
+.welcome-tab__register, .welcome-tab__about {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .welcome-tab__about {
@@ -97,6 +88,7 @@
 
     @include phone() {
       font-size: 21px;
+      padding-bottom: 20px;
     }
   }
 
@@ -151,9 +143,19 @@
   flex-direction: column;
   align-items: center;
 
+  @include tablet() {
+    width: 348px;
+    max-width: 100%;
+  }
+
+  @include phone() {
+    padding-top: 20px;
+  }
+
   .contact-form__button-left, .contact-form__button-right {
     width: calc(50% - 1px);
   }
+
 }
 
 .form__subtitle {
@@ -162,10 +164,14 @@
   margin-bottom: 35px;
   @include webis();
   @include underline(-10px, white)
+
+  @include phone() {
+    font-size: 21px;
+  }
 }
 
 .form-login__input-line {
-  width: 340px;
+  width: 90%;
   height: 45px;
   display: flex;
   margin-bottom: 15px;
@@ -205,6 +211,70 @@
   @include roboto();
 
   @include phone() {
-
+    font-size: 14px;
   }
+}
+
+.authorize-toggler {
+  display: none;
+
+  ~ .welcome-tab {
+
+    height: 396px;
+    text-align: center;
+    width: 380px;
+    background-color: rgba(18, 38, 32, .6);
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    @include tablet() {
+      width: 348px;
+      max-width: 95%;
+    }
+
+    @include phone() {
+      width: 300px;
+    }
+
+    .welcome-tab__register {
+      /* for firefox 31 */
+      transform: rotateY(180deg);
+      z-index: 5;
+      backface-visibility: hidden;
+    }
+
+    .welcome-tab__about {
+      transform: rotateY(0deg);
+    }
+  }
+
+  &:checked {
+
+    ~ .welcome-tab {
+      transform: translate(-50%, -50%) rotateY(180deg);
+      height: 284px;
+      perspective: 1000px;
+
+      transition: 0.6s ease-in-out;
+      transform-style: preserve-3d;
+
+      .welcome-tab__about {
+        transform: rotateY(0deg);
+        z-index: 5;
+      }
+
+      .welcome-tab__register {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+
 }

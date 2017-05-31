@@ -24,9 +24,14 @@ html
     body
         .global
             .wrapper-index
-                .content
-                    include ../parts/index/welcome-tab
-            .authorize-button
+            input.authorize-toggler#authorize-toggler(type="checkbox")
+            label.authorize-button(for="authorize-toggler")
                 .authorize-button__text Авторизоваться
+            include ../parts/index/welcome-tab
+            //-input.input-toggler#menuToggler(type="checkbox")
+                label.menu-toggler(for="menuToggler")
+                    span.menu-toggler__line
+                    span.menu-toggler__line
+                    span.menu-toggler__line
             .index__foot
                 .row-bottom-writing &copy; Макс Рысухин | создано с любовью в LoftSchool | 2016
