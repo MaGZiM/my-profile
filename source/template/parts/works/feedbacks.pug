@@ -30,12 +30,4 @@ section.section.feedbacks
         img.feedbacks__background-img(src="./assets/img/backgrounds/feedback-backgrnd.png")
     .feedbacks__blur-wrapper
         .contact-form__blur
-        .contact-form.feedbacks__contact-form
-            .contact-form__title СВЯЗАТЬСЯ СО МНОЙ
-            .contact-form__fields
-                input.contact-field.contact-field__name(type="text" placeholder="name")
-                input.contact-field.contact-field__email(type="email" placeholder="email")
-                textarea.contact-field.contact-field__message(placeholder="Ваше сообщение")
-            .contact-form__buttons
-                input(type="submit" value="Отправить").contact-form__button-left
-                input(type="submit" value="Очистить").contact-form__button-right
+        include form
