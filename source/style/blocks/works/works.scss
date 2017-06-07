@@ -35,7 +35,9 @@
   background: $about-me;
   height: 100%;
   width: 50%;
-  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 
   @media screen and (max-width: 1120px) {
     height: 295px;
@@ -47,11 +49,24 @@
   }
 }
 
-.schoolsite__block {
-  height: 320px;
-  width: 440px;
+.schoolsite__blocks {
+  width: 100%;
+  display: flex;
+  position: relative;
+  height: 250px;
   text-align: center;
-  @include centered()
+}
+
+.schoolsite__block.active {
+  left: 0;
+}
+
+.schoolsite__block {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 100%;
+  //@include centered()
 
   @media screen and (max-width: 1120px) {
     width: 100%;
