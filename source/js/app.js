@@ -1,6 +1,6 @@
-import prepareSend from './prepareSend';
 import * as works from './works/works';
-import * as parallax from './parallax/parallax'
+import preloader as perloder from './common/preloader';
+import * as parallax from './parallax/parallax';
 
 const formLogin = document.querySelector('#login');
 
@@ -42,6 +42,6 @@ function initMap() {
 };
 (function() {
   'use strict';
-
+  preloader.init();
   slider.init();
 })();
