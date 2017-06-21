@@ -1,5 +1,5 @@
 import * as works from './works/works';
-import preloader as perloder from './common/preloader';
+import preloader from './common/preloader';
 import * as parallax from './parallax/parallax';
 
 const formLogin = document.querySelector('#login');
