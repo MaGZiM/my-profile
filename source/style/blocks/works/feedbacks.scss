@@ -1,5 +1,4 @@
 .feedbacks {
-  //background: url("./assets/img/backgrounds/feedback-backgrnd.png"); // no-repeat center bottom;
   background-size: auto 100%;
   padding-top: 30px;
   position: relative;
@@ -69,6 +68,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 500px;
+  z-index: 5;
 
   @media screen and (max-width: 590px) {
     flex-direction: column;
