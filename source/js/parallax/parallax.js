@@ -16,9 +16,9 @@ const parallax = (function() {
       style.webkitTransform = transformString;
     },
     init: function(wScroll) {
-      this.move(bg, wScroll, 50);
-      this.move(user, wScroll, 3);
-      this.move(image, wScroll, 7);
+      this.move(bg, wScroll, -45);
+      this.move(user, wScroll, 8);
+      this.move(image, wScroll, 47);
     }
   };
 }());
