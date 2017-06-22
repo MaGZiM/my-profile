@@ -44,7 +44,9 @@ $arrow-down: 86px;
   background-image: url('../../assets/img/backgrounds/feedback-backgrnd.png');
   background-position: center center;
   background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Blur(pixelRadius=20);
   filter:blur(20px);
+  -ie-filter: blur(20px);
 }
 
 .contact-form {
