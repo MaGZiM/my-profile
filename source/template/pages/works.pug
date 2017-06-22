@@ -1,9 +1,5 @@
 extends ../main-layout
 
-//-block variables
-    - var title = 'My Works'
-    - var footerClass = 'footer_transparent'
-
 block content
     section.section.hero#start
         .hero__bg
@@ -13,9 +9,6 @@ block content
 
         svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 1175.495 313.961")
             use(xlink:href="assets/img/svg/portfolio_header.svg#portfolio")
-
-        //-a(href="").hamburger
-            img(src="./assets/img/content/hamburger.png").hamburger-img
 
         a(href="#works-up").down-arrow
             svg.down-arrow__icon

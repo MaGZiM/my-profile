@@ -10,9 +10,6 @@ block content
     svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 498.161 175.44")
       use(xlink:href="assets/img/svg/about_header.svg#about")
 
-    //-a(href="").hamburger
-      img(src="./assets/img/content/hamburger.png").hamburger-img
-
 
     a(href="#about-section").down-arrow
       svg.down-arrow__icon
@@ -42,8 +39,7 @@ block content
 
   section.map
     div#my-map
-      include ../parts/about/contacts-pad
+    include ../parts/about/contacts-pad
     .empty
-  block scripts
-    script(type="text/javascript" src="./assets/js/app.js")
-    script(async defer type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAflkxBEAiCJOLSeX0GG3drrzs0d2IJdCg&callback=initMap")
+block scripts
+  script(type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAflkxBEAiCJOLSeX0GG3drrzs0d2IJdCg")
