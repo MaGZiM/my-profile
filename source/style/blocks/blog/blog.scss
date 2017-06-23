@@ -34,6 +34,18 @@
   }
 }
 
+.hero-blog__bg {
+  top: -350px;
+}
+
+.hero-blog__bg-img {
+  min-width: 100vw;
+}
+
+.hero__user-block {
+  position: relative;
+}
+
 .hero__title_blog {
   top: 80px;
   transform: translateX(-50%);
