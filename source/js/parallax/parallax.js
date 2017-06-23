@@ -17,14 +17,16 @@ const parallax = (function() {
     },
     init: function(wScroll) {
       this.move(bg, wScroll, -45);
-      this.move(user, wScroll, 8);
+      this.move(user, wScroll, 3);
       this.move(image, wScroll, 47);
     }
   };
 }());
 
-window.onscroll = function () {
-  let scroll = window.pageYOffset;
+if (document.title === 'Мои работы' || document.title === 'Обо мне') {
+  window.onscroll = function () {
+    let scroll = window.pageYOffset;
 
-  parallax.init(scroll);
+    parallax.init(scroll);
+  }
 }
