@@ -2,6 +2,7 @@ import * as works from './works/works';
 import blur from './works/blurForm/blur';
 import preloader from './common/preloader';
 import * as parallax from './parallax/parallax';
+import prepareSend from './prepareSend';
 
 const formLogin = document.querySelector('#login');
 

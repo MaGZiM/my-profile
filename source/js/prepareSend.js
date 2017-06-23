@@ -1,7 +1,7 @@
 import sendAjaxJson from './sendAjax';
 
 export default function prepareSend(url, form, data, cb) {
-  let resultContainer = form.querySelector('.contact-form__status');
+  let resultContainer = form.querySelector('.status');
   resultContainer.innerHTML = 'Sending...';
   sendAjaxJson(url, data, function (data) {
     form.reset();
