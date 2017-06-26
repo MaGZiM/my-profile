@@ -36,12 +36,12 @@ const sidebar = (function(){
 
     }
   }
-
+/*
   return {
     init: function() {
       //console.log(offset);
     }
-  }
+  }*/
 }());
 
 export default sidebar;
