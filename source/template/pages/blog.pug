@@ -27,22 +27,29 @@ block content
         aside.sidebar
             ul.post-refs__list
                 each post in posts
-                    li.post-refs__item.item_active
-                        a(href"#").post-refs__link= post.title
+                    if (post == posts[0])
+                        li.post-refs__item.item_active
+                            a(href"#").post-refs__link= post.title
+                    else
+                        li.post-refs__item
+                            a(href"#").post-refs__link= post.title
                 li.post-refs__item
                     a(href"#").post-refs__link First blogpost
 
         main.blog-content
             ul.blog__posts
                 each post in posts
-                    li.post
-                        .post__title= post.title
-                        -
-                            var date = new Date(post.date).toLocaleDateString('ru', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: '2-digit'
-                            })
-                        .post__date= date
-                        .post__contents
-                            p= post.text
+                    if (post == posts[0])
+                        li.post.post_active
+                    esle
+                        li.post
+                            .post__title= post.title
+                            -
+                                var date = new Date(post.date).toLocaleDateString('ru', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: '2-digit'
+                                })
+                            .post__date= date
+                            .post__contents
+                                p= post.text

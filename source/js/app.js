@@ -1,5 +1,7 @@
 import * as works from './works/works';
 import blur from './works/blurForm/blur';
+import sidebar from './blog/sidebar';
+//import blogMenu from './blog/blog';
 import preloader from './common/preloader';
 import * as parallax from './parallax/parallax';
 import prepareSend from './prepareSend';
@@ -27,6 +29,11 @@ function prepareSendLogin(e) {
 (function() {
   'use strict';
   preloader.init();
+
+  if (document.title === 'Блог') {
+    sidebar.init();
+    //blogMenu.init();
+  }
 
   if (document.title === 'Мои работы') {
     blur.init();
