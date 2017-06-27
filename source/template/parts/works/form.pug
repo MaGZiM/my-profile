@@ -1,0 +1,10 @@
+form(action="contact" method="POST").contact-form.feedbacks__contact-form#mail
+    .contact-form__title СВЯЗАТЬСЯ СО МНОЙ
+    .contact-form__fields
+        input.contact-field.contact-field__name(name="name" type="text" placeholder="name")
+        input.contact-field.contact-field__email(name="email" type="email" placeholder="email")
+        textarea.contact-field.contact-field__message(name="text" placeholder="Ваше сообщение")
+    .contact-form__buttons
+        .contact-form__status.status
+        input(type="submit" value="Отправить").contact-form__button-left
+        input(type="reset" value="Очистить").contact-form__button-right

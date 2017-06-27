@@ -1,0 +1,15 @@
+{
+  "mail": {
+    "subject": "Message from portfolio website",
+    "recipient": "m.mowgly@gmail.com",
+    "smtp": {
+      "host": "smtp.gmail.com",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "maxr.website@gmail.com",
+        "pass": "dpgyfgn45g"
+      }
+    }
+  }
+}

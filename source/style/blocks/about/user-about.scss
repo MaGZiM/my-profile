@@ -1,0 +1,122 @@
+.user-about__section-title {
+  margin-top: -60px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+
+  .title {
+    width: 275px;
+    @include centered(x)
+  }
+
+  .section__title-img {
+    fill: #6C9C5A;
+    fill-opacity: .4;
+    height: 60%;
+    width: 90%;
+    @include centered()
+  }
+
+  @include laptop() {
+    width: 100%;
+  }
+
+  @include phone() {
+    .title{
+      width: 165px;
+    }
+  }
+}
+
+.about__section-title {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  padding: 35px 0 0;
+  text-align: center;
+  font-size: 63px;
+  color: $main-title;
+  @include underline(-10px);
+  @include webis
+
+  @include laptop() {
+    margin-bottom: 42px;
+  }
+
+  @include phone() {
+    font-size: 35px;
+    height: 100px;
+    margin-bottom: 10px;
+    @include underline(10px)
+  }
+}
+
+.user-about {
+  width: 50%;
+  color: $subtitle;
+
+  @include laptop() {
+    max-width: 390px;
+    width: 80%;
+  }
+}
+
+.user-about__picture {
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+
+  @include laptop {
+    width: 100%;
+  }
+
+  @include tablet() {
+    height: 420px;
+  }
+}
+
+.user-about__img {
+  height: 100%;
+  width: auto;
+}
+
+.user-about__title {
+  text-align: center;
+  margin-top: 28px;
+  color: $subtitle;
+
+  .subtitle {
+    color: $main-title;
+    position: relative;
+    font-size: 35px;
+    display: inline;
+    @include webis;
+    @include underline(-23px)
+
+    @include phone() {
+      margin-bottom: 5px;
+      font-size: 21px;
+
+      &:after {
+        width: 56px;
+        margin-left: -28px;
+        bottom: -17px;
+      }
+    }
+  }
+}
+
+.user-about__text {
+  margin-top: 24px;
+  padding: 20px 0;
+  font-size: 17px;
+
+  p {
+    padding: 5px 0;
+  }
+
+  @include phone() {
+    margin: 0;
+  }
+}

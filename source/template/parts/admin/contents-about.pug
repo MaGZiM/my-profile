@@ -1,0 +1,15 @@
+li.contents-data.contents_active#data-about
+    .contents-data__title Страница "Обо мне"
+    form.contents-data__form#data-about__form
+        ul.admin-skills
+            each sum in skills
+                li.admin-skills__block
+                    .admin-skills__block-title= sum.name
+                    ul.admin-skills__set
+                        each skill in sum.skills
+                            li.admin-skills__row
+                                label(for=`skill-${skill.skillname}`).admin-skills__row-skill-name= skill.skillname
+                                .admin-skills__row-value
+                                    input(type="text" maxlength="3" value=`${skill.skillvalue}` id=`skill-${skill.skillname}`).admin-text__input.input__row-skill
+                                    span.about-percent %
+        input(type="submit" value="Сохранить").contents-data__button#about-data__btn

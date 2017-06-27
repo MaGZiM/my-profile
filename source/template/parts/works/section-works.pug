@@ -1,0 +1,68 @@
+section.works
+    .works__up#works-up
+        +poligon("f8f9f5")
+        .section-title
+            svg.section__title-img(preserveAspectRatio="none" viewBox="0 0 505.101 165.036")
+                use(xlink:href="assets/img/svg/works_header.svg#works")
+            +title("МОИ РАБОТЫ", 'section-title__text')
+    .works__contents
+        .works__schoolsite
+            ul.schoolsite__blocks
+                li.schoolsite__block.active
+                    .schoolsite__block-title САЙТ ШКОЛЫ ОНЛАЙН ОБРАЗОВАНИЯ
+                    .schoolsite__block-techs HTML, CSS, JAVASCRIPT
+                    a(href="").schoolsite__link
+                        button.schoolsite__btn
+                            .schoolsite__btn-text
+                                i.fa.fa-chain.schoolsite__btn-icon
+                                .schoolsite__btn-txt Посмотреть сайт
+                li.schoolsite__block
+                    .schoolsite__block-title САЙТ ОРГАНИЗАЦИИ "АТМА ЙОГА"
+                    .schoolsite__block-techs HTML, CSS, JAVASCRIPT
+                    a(href="").schoolsite__link
+                        button.schoolsite__btn
+                            .schoolsite__btn-text
+                                i.fa.fa-chain.schoolsite__btn-icon
+                                .schoolsite__btn-txt Посмотреть сайт
+                li.schoolsite__block
+                    .schoolsite__block-title САЙТ МЕБЕЛЬНОГО ИНТЕРЕНЕТ МАГАЗИНА
+                    .schoolsite__block-techs HTML, CSS, JAVASCRIPT
+                    a(href="").schoolsite__link
+                        button.schoolsite__btn
+                            .schoolsite__btn-text
+                                i.fa.fa-chain.schoolsite__btn-icon
+                                .schoolsite__btn-txt Посмотреть сайт
+        .works__large
+            img.works__large-img(src="./assets/img/content/works/school.png")
+        .works__slider
+            .slider.slider__down
+                .slider__display
+                    ul.slider__list.slider__list-down
+                        each num in ['school','yoga','shop']
+                            if num == 'school'
+                                li.slider__item.active
+                                    img(src=`./assets/img/content/works/${num}.png`, alt=`${num}`)
+                            else
+                                li.slider__item
+                                    img(src=`./assets/img/content/works/${num}.png`, alt=`${num}`)
+                .slider__overlaydown
+                a(href="#").slider__move.slider__move-down
+                    svg.slider__down-icon
+                        use(xlink:href="./assets/img/sprite.svg#portf_arrow_down")
+
+
+            .slider.slider__up
+                .slider__display
+                    ul.slider__list.slider__list-up
+                        - var nums = ['school','yoga','shop']
+                        each num in nums
+                            if num == 'shop'
+                                li.slider__item.active
+                                    img(src=`./assets/img/content/works/${num}.png`, alt=`${num}`)
+                            else
+                                li.slider__item
+                                    img(src=`./assets/img/content/works/${num}.png`, alt=`${num}`)
+                .slider__overlayup
+                a(href="#").slider__move.slider__move-up
+                    svg.slider__up-icon.slider__move-icon
+                        use(xlink:href="./assets/img/sprite.svg#portf_arrow_up")

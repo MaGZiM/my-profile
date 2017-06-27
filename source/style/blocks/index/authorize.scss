@@ -1,0 +1,41 @@
+/*
+.authorize-toggler {
+  display: none;
+
+  ~ .welcome-tab {
+
+
+
+    .welcome-tab__about {
+      z-index: 2;
+      !* for firefox 31 *!
+      transform: rotateY(0deg);
+    }
+  }
+
+  &:checked {
+    ~ .authorize-button {
+      //display: none;
+      height: 100px;
+    }
+
+    ~ .welcome-tab {
+      transform: rotateY(180deg);
+
+      transition: 0.6s;
+      transform-style: preserve-3d;
+
+      .welcome-tab__about {
+        z-index: 2;
+        !* for firefox 31 *!
+        transform: rotateY(0deg);
+      }
+
+      .welcome-tab__register {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+
+}*/

@@ -1,0 +1,15 @@
+li.contents-data#data-works
+    .contents-data__title Страница "Мои работы"
+    form.contents-data__form#data-works__form(action='/upload' method="POST" enctype="multipart/form-data")
+        .form__title Добавить работу
+        label.form__input-line
+            input(name="name" type="text" placeholder="Название проекта").admin-text__input.form__input#proj-name
+        label.form__input-line
+            input(name="name" type="text" placeholder="Технологии").admin-text__input.form__input#proj-desc
+        label.form__upload-line(for="file-select")
+            svg.form__upload-icon
+                use(xlink:href="./assets/img/sprite.svg#upload-img")
+            .form__upload-text Загрузить картинку
+            input(name="photo" type="file" required accept="image/*").form__input#file-select
+        .form__btns.form__input-line
+            input(name="" type="submit" value="Отправить").contents-data__button

@@ -1,0 +1,47 @@
+.about {
+  display: flex;
+  position: relative;
+
+  @include tablet() {
+    flex-direction: column;
+  }
+}
+
+.about__left, .about__right {
+  width: 50%;
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 25px;
+
+  @include tablet() {
+    width: 100%;
+  }
+
+  @include phone() {
+    width: 100%;
+  }
+}
+
+.about__left {
+  background: $about-me;
+  display: flex;
+  padding-right: 20px;
+
+  @include laptop() {
+    flex-flow: column;
+    align-items: center;
+    padding-right: 0;
+  }
+}
+
+.about__right {
+  background: $skills;
+}
+
+.about-data__content {
+  padding-left: 40px;
+
+  @include tablet {
+    padding: 15px;
+  }
+}

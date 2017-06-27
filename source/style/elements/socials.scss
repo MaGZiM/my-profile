@@ -1,0 +1,20 @@
+.socials {
+  display: flex;
+  font-size: 27px;
+  justify-content: space-between;
+  width: 136px;
+
+  .socials__item {
+    display: inline-block;
+    color: white;
+  }
+}
+
+.socials__link {
+  color: white;
+
+  &:hover {
+    color: $btn-color_hover;
+    cursor: pointer;
+  }
+}

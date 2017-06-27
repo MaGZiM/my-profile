@@ -1,9 +1,5 @@
 extends ../main-layout
 
-block variables
-    - var title = 'Blog'
-    - var footerClass = 'footer_blog'
-
 block content
     section.section.hero-blog
         .hero-blog__bg
@@ -11,34 +7,49 @@ block content
 
         +socials('vk', 'github-alt', 'linkedin')
 
-        a(href="").hamburger
+        //-a(href="").hamburger
             img(src="./assets/img/content/hamburger.png").hamburger-img
+
+        a(href="#blog-section").down-arrow
+            svg.down-arrow__icon
+                use(xlink:href="assets/img/sprite.svg#arrow_down")
 
         .hero__title.hero__title_blog
             .user.hero__user-block
                 .user__photo
                     .user__photo-avatar
-                        img(src="./assets/img/content/user.jpg", alt="").user__photo-img
-                +title("БЛОГ", "header-blog.png", "header__blog-title")
+                        img(src="./assets/img/avas/my-photo.jpg", alt="").user__photo-img
+                +title("БЛОГ", "header__blog-title")
                 .blog__desc Статьи, которые я написал
 
-    section.section.blog
+    section.section.blog#blog-section
         +poligon("f8f9f5")
         aside.sidebar
             ul.post-refs__list
                 each post in posts
-                    li.post-refs__item.item_active
-                        a(href"#").post-refs__link= post.title
+                    if (post == posts[0])
+                        li.post-refs__item.item_active
+                            a(href"#").post-refs__link= post.title
+                    else
+                        li.post-refs__item
+                            a(href"#").post-refs__link= post.title
                 li.post-refs__item
                     a(href"#").post-refs__link First blogpost
 
         main.blog-content
             ul.blog__posts
                 each post in posts
-                    li.post
-                        .post__title= post.title
-                        .post__date= post.date
-                        each art in post.text
-                            p= art
-
-    .blog__empty
+                    if (post == posts[0])
+                        li.post.post_active
+                    esle
+                        li.post
+                            .post__title= post.title
+                            -
+                                var date = new Date(post.date).toLocaleDateString('ru', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: '2-digit'
+                                })
+                            .post__date= date
+                            .post__contents
+                                p= post.text

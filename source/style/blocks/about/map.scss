@@ -1,0 +1,16 @@
+.map {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+
+  @include phone() {
+    display: flex;
+    flex-direction: column;
+    height: 1145px;
+  }
+}
+
+#my-map {
+  height: 100%;
+  position: relative;
+}

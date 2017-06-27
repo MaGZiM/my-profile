@@ -1,0 +1,27 @@
+.section-title {
+  width: 400px;
+  height: 160px;
+  position: relative;
+}
+
+.section-title__text {
+  font-size: 63px;
+  width: 100%;
+  color: $main-title;
+  text-align: center;
+  @include underline();
+  @include centered();
+  @include webis();
+
+  @media screen and (max-width: 425px) {
+    font-size: 35px;
+  }
+}
+
+.section__title-img {
+  fill: #6C9C5A;
+  fill-opacity: .4;
+  height: 80%;
+  width: 100%;
+  position: absolute;
+}

@@ -1,0 +1,298 @@
+.hero-blog {
+  height: 435px;
+  overflow: hidden;
+  position: relative;
+
+  .down-arrow {
+    display: none;
+
+    @include tablet() {
+      display: inline-block;
+      bottom: 43px;
+    }
+  }
+
+  @include tablet() {
+    height: 505px;
+  }
+
+  .socials {
+    position: absolute;
+    top: 23px;
+    left: 30px;
+
+    @include phone() {
+      font-size: 23px;
+      top: 5px;
+      left: 11px;
+      width: 120px;
+    }
+  }
+
+  @include phone() {
+    height: 560px;
+  }
+}
+
+.hero-blog__bg {
+  top: -350px;
+}
+
+.hero-blog__bg-img {
+  min-width: 100vw;
+}
+
+.hero__user-block {
+  position: relative;
+}
+
+.hero__title_blog {
+  top: 80px;
+  transform: translateX(-50%);
+
+  @include tablet() {
+    top: 115px;
+  }
+}
+
+.header__blog-title {
+  position: relative;
+  font-size: 63px;
+  margin-bottom: 15px;
+  @include underline(0, white);
+  color: white;
+  @include webis
+
+  @include tablet() {
+    font-size: 49px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+
+  @include phone() {
+    font-size: 35px;
+    margin-bottom: 10px;
+
+    &:after {
+      width: 56px;
+      margin-left: -28px;
+    }
+  }
+}
+
+.blog__desc {
+  color: white;
+  @include roboto()
+
+  @include tablet() {
+    font-size: 14px;
+  }
+}
+
+.blog{
+  position: relative;
+  background: $blog-color;
+  padding-top: 60px;
+  display: flex;
+
+  @include tablet() {
+    padding-top: 45px;
+    padding-left: 25px; // !!!!!!!!!!!maybe need to be changed because of poligon
+    padding-right: 15px;
+  }
+
+  @include phone() {
+    padding: 25px 10px 0;
+  }
+
+  .poligon {
+    height: 155px;
+
+    @include laptop() {
+      height: 105px;
+    }
+
+    @include tablet() {
+      height: 65px;
+      left: 0;
+    }
+
+    @include phone() {
+      height: 30px;
+    }
+  }
+}
+
+.sidebar {
+  width: 390px;
+  position: relative;
+  /*padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include laptop() {
+    width: 310px;
+  }*/
+  @include laptop {
+    width: 310px;
+  }
+
+  @include tablet() {
+    display: none;
+  }
+}
+
+.post-refs__list {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 10px;
+
+  @include laptop() {
+    width: 310px;
+  }
+}
+
+.post-refs__item {
+  text-decoration: none;
+  font-size: 16px;
+  border-right: 3px solid transparent;
+  min-height: 42px;
+  text-align: right;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 25px;
+  width: 275px;
+
+  .post-refs__link {
+    color: $main-title;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-right: 3px solid $btn-color_hover;
+
+    .post-refs__link {
+      color: $btn-color_hover;
+    }
+  }
+}
+
+.item_active {
+  border-right: 3px solid $btn-color_hover;
+
+  .post-refs__link {
+    color: $btn-color_hover;
+    @include roboto(bold)
+  }
+}
+
+.blog-content {
+  padding-left: 120px;
+  width: 1050px;
+
+  @include laptop() {
+    padding-left: 100px;
+    width: 770px;
+  }
+  @include tablet() {
+    padding-left: 0;
+  }
+}
+
+.blog__posts {
+  //width: 685px;
+
+  @include phone() {
+    width: 100%;
+  }
+}
+
+.post {
+  padding-bottom: 70px;
+  margin-bottom: 70px;
+  position: relative;
+
+  @include tablet() {
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+
+  @include phone() {
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+  }
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 5px;
+    width: 680px;
+    background: #ecebe4;
+    bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.post__title {
+  font-size: 35px;
+  @include webis();
+  color: $subtitle;
+  margin-bottom: 15px;
+
+  @include tablet() {
+    font-size: 30px;
+    margin-bottom: 7px;
+  }
+
+  @include phone() {
+    font-size: 21px;
+  }
+}
+
+.post__date {
+  color: $btn-color;
+  @include roboto();
+  margin-bottom: 20px;
+
+  @include tablet() {
+    font-size: 14px;
+    margin-bottom: 11px;
+  }
+}
+
+.post__contents {
+  color: $subtitle;
+  @include roboto();
+
+  p {
+    margin-bottom: 10px;
+/*
+    &:last-child {
+      margin-bottom: 0;
+    }*/
+  }
+
+  @include tablet() {
+    font-size: 14px;
+    line-height: 1.5em;
+  }
+}/*
+
+.blog__empty {
+  height: 165px;
+  display: block;
+  content: '';
+}*/

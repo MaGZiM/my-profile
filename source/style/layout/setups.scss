@@ -8,10 +8,10 @@ body {
   width: 100%;
   font-size: 16px;
   line-height: 1.42;
-  min-width: 1800px;
+  /*min-width: 1800px;
 
   @include laptop() {
-    min-width: 1200px;
+    width: 1200px;
   }
 
   @include tablet() {
@@ -20,11 +20,15 @@ body {
 
   @include phone() {
     min-width: 320px;
-  }
+  }*/
 }
 
 * {
   box-sizing: border-box;
+}
+
+.global {
+  position: relative;
 }
 
 .wrapper {
@@ -36,7 +40,6 @@ body {
 .empty {
   content: '';
   display: block;
-  height: $footer-height;
 }
 
 ul {
@@ -58,10 +61,6 @@ h1, h2, h3, h4, h5 {
 a {
   text-decoration: none;
   color: white;
-}
-
-footer {
-  margin-top: -$footer-height;
 }
 
 input, textarea {

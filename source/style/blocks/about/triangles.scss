@@ -1,0 +1,35 @@
+.triangle {
+  height: 155px;
+  width: 50%;
+
+  @include tablet() {
+    height: 100px;
+    height: 65px;
+  }
+
+  @include phone() {
+    height: 30px;
+  }
+
+  &_fill {
+
+    &_about {
+      fill: $about-me;
+      left: 0;
+    }
+
+    &_skills {
+      fill: $skills;
+      left: 50%;
+
+      @include tablet() {
+        fill: $about-me;
+      }
+    }
+  }
+}
+
+.about__triangles {
+  position: absolute;
+  bottom: 100%;
+}

@@ -1,9 +1,5 @@
 extends ../main-layout
 
-block variables
-  - var title = 'About Me'
-  - var footerClass = 'footer-about'
-
 block content
   section.section.hero
     .hero__bg
@@ -11,38 +7,39 @@ block content
 
     +socials('vk', 'github-alt', 'linkedin')
 
-    img(src='assets/img/backgrounds/header-portfolio.png').ghost-img-portfolio
+    svg.ghost-img-portfolio(preserveAspectRatio="none" viewBox="0 0 498.161 175.44")
+      use(xlink:href="assets/img/svg/about_header.svg#about")
 
-    a(href="").hamburger
-      img(src="./assets/img/content/hamburger.png").hamburger-img
 
-    a(href="").down-arrow
-      img(src="./assets/img/arrow_down.svg", alt="").down-arrow__icon
+    a(href="#about-section").down-arrow
+      svg.down-arrow__icon
+        use(xlink:href="assets/img/sprite.svg#arrow_down")
 
-    .hero__title_gen
-      .user.hero__user-block
-        .user__photo.user__photo_gen
-          .user__photo-avatar
-            img(src="assets/img/content/user.jpg", alt="").user__photo-img
-        .user__name Рысухин Максим
-        .user__desc Личный сайт веб-разработчика
+    .user.hero__user-block
+      .user__photo.user__photo_gen
+        img(src="assets/img/avas/my-ava.jpg", alt="").user__photo-img
+      .user__name Рысухин Максим
+      .user__desc Личный сайт веб-разработчика
 
-  section.section.about
+  section.section.about#about-section
     .about__left
-      include ../parts/user-about
+      include ../parts/about/user-about
     .about__right
-      include ../parts/about-data
+      include ../parts/about/about-data
     svg(
-    viewbox="0 0 1000 100"
-    preserveAspectRatio="none"
-    class="triangle triangle_fill_about about__triangles")
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_about about__triangles")
       polygon(points="0,0 0,100 1000,100")
     svg(
-    viewbox="0 0 1000 100"
-    preserveAspectRatio="none"
-    class="triangle triangle_fill_skills about__triangles")
+      viewbox="0 0 1000 100"
+      preserveAspectRatio="none"
+      class="triangle triangle_fill_skills about__triangles")
       polygon(points="0,100 1000,100 1000,0")
 
   section.map
-    img.map-img(src="assets/img/backgrounds/map-img.jpg")
-    include ../parts/contacts-pad
+    div#my-map
+    include ../parts/about/contacts-pad
+    .empty
+block scripts
+  script(type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyAflkxBEAiCJOLSeX0GG3drrzs0d2IJdCg")

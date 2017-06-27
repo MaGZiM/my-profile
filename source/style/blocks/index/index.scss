@@ -1,0 +1,280 @@
+.wrapper-index {
+  position: relative;
+  background: url("../../assets/img/header-about.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 93%;
+}
+
+.authorize-button {
+  height: 45px;
+  width: 180px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  border: 2px solid white;
+  border-radius: 24px;
+  text-align: center;
+
+  @include phone() {
+    width: 150px;
+    height: 40px;
+    @include centered(x);
+    font-size: 14px;
+  }
+
+  &:hover {
+    background: $btn-color;
+    border: none;
+    border-color: green;
+    cursor: pointer;
+
+    .authorize-button__text {
+      padding-top: 11px;
+
+      @include phone() {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  &:active {
+    .authorize-button__text {
+      padding-top: 12px;
+
+      @include phone() {
+        padding-top: 12px;
+      }
+    }
+  }
+}
+
+.authorize-button__text {
+  @include roboto(medium)
+  padding-top: 9px;
+
+  @include phone() {
+    padding-top: 8px;
+  }
+}
+
+.welcome-tab__register, .welcome-tab__about {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.welcome-tab__about {
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .user__photo {
+    border-color: $btn-color;
+  }
+
+  .user__name {
+    font-size: 28px;
+    margin-bottom: 15px;
+
+    @include phone() {
+      font-size: 21px;
+      padding-bottom: 20px;
+    }
+  }
+
+  .user__desc {
+    color: #d1d5d4;
+  }
+
+  .socials {
+    margin-bottom: 30px;
+  }
+
+  .socials__link {
+    color: #8d9a97;
+
+    &:hover {
+      color: $btn-color_hover;
+    }
+  }
+
+  .contact-form__button-left, .contact-form__button-right {
+    width: calc(33.3% - 1px);
+
+    @include tablet() {
+      width: 33.3%;
+    }
+  }
+
+  .contact-form__button-center {
+    width: calc(33.3% - 2px);
+  }
+}
+
+.contact-form__button-left, .contact-form__button-right, .contact-form__button-center {
+  padding: 0;
+}
+
+.user__desc {
+  margin-bottom: 20px;
+}
+
+.contact-form__buttons {
+  @include phone() {
+    font-size: 14px;
+  }
+}
+
+.form__login {
+  padding-top: 35px;
+  width: 380px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet() {
+    width: 348px;
+    max-width: 100%;
+  }
+
+  @include phone() {
+    padding-top: 20px;
+  }
+
+  .contact-form__button-left, .contact-form__button-right {
+    width: calc(50% - 1px);
+  }
+
+}
+
+.form__subtitle {
+  position: relative;
+  font-size: 35px;
+  margin-bottom: 35px;
+  @include webis();
+  @include underline(-10px, white)
+
+  @include phone() {
+    font-size: 21px;
+  }
+}
+
+.form-login__input-line {
+  width: 90%;
+  height: 45px;
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 22px;
+  overflow: hidden;
+ }
+
+.form__input-img {
+  width: 45px;
+  height: 100%;
+  background: #f0efe9;
+}
+
+.form__input {
+  width: calc(100% - 45px);
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+.contact-form__buttons {
+  align-self: stretch;
+  width: 100%;
+}
+
+.contact-form__btn-text {
+  line-height: 45px;
+}
+
+.index__foot {
+  display: inline-block;
+  position: absolute;
+  color: white;
+  text-align: center;
+  bottom: 0;
+  height: 7%;
+  width: 100%;
+  @include roboto();
+
+  @include phone() {
+    font-size: 14px;
+  }
+}
+
+.authorize-toggler {
+  display: none;
+
+  ~ .welcome-tab {
+
+    height: 396px;
+    text-align: center;
+    width: 380px;
+    background-color: rgba(18, 38, 32, .6);
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    @include tablet() {
+      width: 348px;
+      max-width: 95%;
+    }
+
+    @include phone() {
+      width: 300px;
+    }
+
+    .welcome-tab__register {
+      /* for firefox 31 */
+      transform: rotateY(180deg);
+      z-index: 5;
+      backface-visibility: hidden;
+    }
+
+    .welcome-tab__about {
+      transform: rotateY(0deg);
+    }
+  }
+
+  &:checked {
+
+    ~ .welcome-tab {
+      transform: translate(-50%, -50%) rotateY(180deg);
+      height: 284px;
+      perspective: 1000px;
+
+      transition: 0.6s ease-in-out;
+      transform-style: preserve-3d;
+
+      .welcome-tab__about {
+        transform: rotateY(0deg);
+        z-index: 5;
+      }
+
+      .welcome-tab__register {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+
+}

@@ -1,0 +1,49 @@
+.admin-skills {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.admin-skills__block {
+  margin-bottom: 30px;
+  width: 250px;
+  margin-right: 150px;
+}
+
+.admin-skills__block-title {
+  margin-bottom: 20px;
+  @include roboto(medium)
+}
+
+.admin-skills__set {
+  padding-left: 20px;
+}
+
+.admin-skills__row {
+  margin-bottom: 10px;
+  @include roboto();
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.input__row-skill {
+  margin-right: 7px;
+  text-align: center;
+  width: 46px;
+}
+
+.admin-skills__row-skill-name {
+  line-height: 40px;
+}
+
+.contents-data__button {
+  padding: 15px 0;
+  color: white;
+  width: 120px;
+  border-radius: 5px;
+  @include roboto(medium);
+  background: $btn-color;
+}

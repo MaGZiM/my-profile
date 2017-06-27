@@ -1,0 +1,68 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgb(108, 156, 90);
+}
+
+.preloader__img {
+  @include centered();
+  width: 150px;
+}
+
+.preloader__percents {
+  color: white;
+  font-size: 28px;
+  @include centered(x)
+  @include roboto(medium)
+}
+
+.preloader__waves {
+  fill: white;
+}
+
+#waves {
+  stroke: white;
+
+  :first-child {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: preloading 1.5s infinite;
+  }
+
+  :nth-child(2) {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: preloading 1.5s infinite;
+    animation-delay: .25s;
+  }
+
+  :last-child {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: preloading 1.5s infinite;
+    animation-delay: .5s;
+  }
+}
+
+.preloader__wave {
+  stroke: white;
+  width: 100%;
+  fill: rgb(108, 156, 90);
+}
+
+@keyframes preloading {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  60% {
+    stroke-dashoffset: 80;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,21 @@
+.ghost-img-portfolio {
+  position: absolute;
+  top: 27%;
+  left: 5%;
+  right: 5%;
+  height: 300px;
+  width: 90%;
+  height: 300px;
+  fill: black;
+  fill-opacity: .4;
+
+  @include laptop {
+    height: 240px;
+    top: 26%;
+  }
+
+  @include tablet {
+    display: none;
+  }
+}
+
